@@ -1,42 +1,68 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
-<head profile="http://gmpg.org/xfn/11">
-<title><?php wp_title('-', 'true', 'right'); ?><?php bloginfo('name'); ?></title>
-<meta name="description" content="Jonathan Faustman is a front-end web developer, web standards enthusiast, espouser of accessibility compliance, and all around good guy." />
-<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
-<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
-<link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/favicon.ico" />
-<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo('rss2_url'); ?>" />
-<link rel="alternate" type="text/xml" title="RSS .92" href="<?php bloginfo('rss_url'); ?>" />
-<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="<?php bloginfo('atom_url'); ?>" />
-<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-<?php wp_get_archives('type=monthly&format=link'); ?>
-<?php //comments_popup_script(); // off by default ?>
-<?php wp_head(); ?>
-<link rel="openid.server" href="http://www.myopenid.com/server" />
-<link rel="openid.delegate" href="http://faustman.myopenid.com/" />
+<?php
+/**
+ * @package WordPress
+ * @subpackage Faustman
+ */
+?>
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>">
+<title><?php wp_title('&ndash;', true, 'right'); ?> <?php bloginfo('name'); ?></title>
+<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen">
+<link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/assets/images/favicon.ico">
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://feeds2.feedburner.com/jonfaustman">
+<link rel="openid.server" href="http://www.myopenid.com/server">
+<link rel="openid.delegate" href="http://faustman.myopenid.com/">
+<meta name="description" content="Jonathan Faustman is a front-end web developer, web standards enthusiast, espouser of accessibility compliance, and all around good guy.">
+<?php
+if (is_page('Imagemakers, hire me'))
+{
+	echo '<meta name="robots" content="noindex, nofollow">'."\n".
+	'<link rel="stylesheet" href="/wp-content/themes/faustman/assets/css/imagemakers.css" type="text/css" media="screen">'."\n".
+	'<!--[if IE]>'."\n".
+	'<link rel="stylesheet" href="/wp-content/themes/faustman/assets/css/imagemakers-ie.css" type="text/css" media="screen">'."\n".
+	'<![endif]-->'."\n".
+	'<link rel="profile" href="http://microformats.org/profile/hcard">'."\n";
+}
+if (is_page('422')) // KSU Web Director
+{
+	echo '<meta name="robots" content="noindex, nofollow">'."\n".
+	'<link rel="stylesheet" href="/wp-content/themes/faustman/assets/css/web-director.css" type="text/css" media="screen">'."\n".
+	'<link rel="stylesheet" href="/wp-content/themes/faustman/assets/css/web-director.print.css" type="text/css" media="print">'."\n".
+	'<link rel="profile" href="http://microformats.org/profile/hcard">'."\n";
+}
+if (is_page('Konnichiwa, bitches'))
+{
+	echo '<style type="text/css">#content{width: 819px} #side{display: none} table tr:nth-child(2n+1){background-color: #161616}</style>'."\n";
+}
+?>
 </head>
 <body>
 <div id="wrapper">
+
 <div id="header">
-<a href="#content" title="Skip to main content" id="skip-link">Skip to main content</a>
+
+<a href="#content" id="skip-link" title="Skip to main content">Skip to main content</a>
 <?php
 $url = get_bloginfo('url');
-$name = get_bloginfo('name');
-if (is_home()) {
-	echo "<h1><a href=\"$url/\">$name<span>Web Developer.Blogger.Human.</span></a></h1>";
-} else {
-	echo "<p><a href=\"$url/\">$name<span>Web Developer.Blogger.Human.</span></a></p>";
+if (is_home())
+{
+	echo '<h1><a href="'.$url.'/">Jon Faustman</a></h1>';
 }
+else
+{
+	echo '<div id="logo"><a href="'.$url.'/">Jon Faustman</a></div>';
+}
+	echo "\n";
 ?>
-<div id="nav">
-<ul>
-<li><a href="<?php echo "$url/"; echo "\">"; if (is_home()) { echo "<strong>Home</strong><span>On the range.</span>"; } else { echo "Home<span>On the range.</span>"; } ?></a></li>
-<li><a href="<?php echo "$url/about/"; echo "\">"; if (is_page(About)) { echo "<strong>About</strong><span>Who the?</span>"; } else { echo "About<span>Who the?</span>"; } ?></a></li>
-<li><a href="<?php echo "$url/contact/"; echo "\">"; if (is_page(Contact)) { echo "<strong>Contact</strong><span>Ding, dong.</span>"; } else { echo "Contact<span>Ding, dong.</span>"; } ?></a></li>
+
+<ul id="nav">
+<li><a href="<?php echo $url.'/">'; if (is_home()) { echo '<strong>Home</strong>'; } else { echo 'Home'; } ?></a></li>
+<li><a href="<?php echo $url.'/about/">'; if (is_page(About)) { echo '<strong>About</strong>'; } else { echo 'About'; } ?></a></li>
+<li><a href="<?php echo $url.'/contact/">'; if (is_page(Contact)) { echo '<strong>Contact</strong>'; } else { echo 'Contact'; } ?></a></li>
 </ul>
+
+<p>Hi! My name is Jon Faustman. I'm a front-end web developer currently living in Manhattan &ndash; no, not that one. I love turning beautiful mockups into functional websites using semantic web standards. I also really enjoy sarcasam and kittens. Not enough? <a href="<?php echo $url; ?>/about/">Find out more</a>.</p>
+
 </div>
-</div>
-<div id="content-wrapper">
-<a name="content"></a><div id="content">

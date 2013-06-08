@@ -1,0 +1,18 @@
+@font-face {font-family: 'Museo700'; src: url('../fonts/museo700-regular-webfont.eot'); src: local('☺'), url('../fonts/museo700-regular-webfont.woff') format('woff'), url('../fonts/museo700-regular-webfont.ttf') format('truetype'), url('../fonts/museo700-regular-webfont.svg#webfontCMkV9Umz') format('svg'); font-weight: normal; font-style: normal}
+
+h1, h2, h3, #content blockquote, #side h2{font-family: Museo700, Georgia, "Times New Roman", Times, serif; font-weight: normal}
+#content h1 a{color: #eee; text-decoration: none}
+#content h1 a:hover{color: #fff}
+#content h1{font-size: 169.23%}
+#content p, #content ul, #content cite{font-size: 107.692%; line-height: 1.75em}
+#content ul{list-style-position: outside; padding-left: 0}
+#content ul li{padding-bottom: .75em}
+#content ul li:last-child{padding-bottom: 0}
+#content blockquote, #side blockquote{border-left: none; font-size: 100%; padding-left: 0}
+#content blockquote{border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; padding: .75em 0; margin-bottom: 2.25em}
+#content blockquote p{color: #ddd; line-height: 2.25em}
+#content cite{font-family: Arial, Helvetica, sans-serif; font-style: normal; font-size: 107.629%; font-weight: bold}
+#content cite a, #side cite a{color: #999; text-decoration: none}
+#content cite a:hover{color: #eee; text-decoration: underline}
+#side cite{color: #999; display: block; font-style: normal}
+.left-quote{margin-left: -10px; font-size: 200%}

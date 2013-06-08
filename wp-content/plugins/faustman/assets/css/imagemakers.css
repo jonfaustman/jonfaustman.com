@@ -1,0 +1,15 @@
+h2{font-size: 131%; margin-bottom: .75em}
+blockquote{border-left: none; padding-left: 0}
+dt, table caption{font-family: Georgia, "Times New Roman", Times, serif; font-size: 123.1%; font-weight: bold; margin-bottom: .5em}
+dd{margin-bottom: 1.5em}
+table caption{text-align: left}
+table tr th{background-color: #111; border-top: 1px solid #222; border-bottom: 1px solid #222; color: #eee; padding: 1em 0}
+table tr:nth-child(odd){background-color: #161616}
+table tr td{padding: 1em 20px 1em 0; width: 40%}
+table tr td:nth-child(2){width: 10%}
+table tr td:last-child{padding-right: 0}
+
+.skip, .contact{text-align: right}
+.affirmative{background: transparent url(../images/tick.png) left top no-repeat; padding-left: 20px; width: 10%}
+#side cite{display: block; color: #999; font-style: normal}
+#side cite a{color: #999}

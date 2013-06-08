@@ -1,25 +1,50 @@
-<?php get_header(); ?>
-<?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
+<?php
+/**
+ * @package WordPress
+ * @subpackage Faustman
+ */
 
-<div class="entry-page" id="post-<?php the_ID(); ?>">
-<h1><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h1>
+get_header(); ?>
 
-<div class="post">
-<?php the_content(); ?>
+<div id="content">
+	
+<?php if (have_posts()) : ?>
+<?php while (have_posts()) : the_post(); ?>
+<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
+
+<h1><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
+
+<div class="entry">
+
+<?php the_content(); echo "\n"; ?>
 
 </div>
+
 </div>
 
 <?php endwhile; ?>
 
 <?php else : ?>
 
-<div class="post">
-<h2><?php _e('Not Found'); ?></h2>
-</div>
+<h1>Not Found</h1>
+
+<p>Sorry, but you are looking for something that isn't here.</p>
 
 <?php endif; ?>
 </div>
 
-<?php get_sidebar(); ?>
+<?php
+if (is_page('361') OR is_page('422'))
+{
+	include_once('wp-content/themes/faustman/sidebar-imagemakers.php');
+}
+else if (is_page('Konnichiwa, bitches'))
+{
+
+}
+else
+{
+	//get_sidebar();
+}
+?>
 <?php get_footer(); ?>

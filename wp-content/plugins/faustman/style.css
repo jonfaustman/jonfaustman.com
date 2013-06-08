@@ -2,323 +2,94 @@
 Theme Name: Faustman
 Theme URI: http://jonfaustman.com/
 Description: My own theme.
-Version: 1.2
+Version: 1.3
 Author: Jon Faustman
 Author URI: http://jonfaustman.com/
-
 */
 
-*{
-	margin: 0;
-	padding: 0;
-}
-html{
-	height: 100%;
-	margin: 0 0 1px;
-}
-body{
-	background: #111;
-	color: #eee;
-	font: small/1.5em Helvetica, Arial, sans-serif; /* 13 pts */
-	margin: 0 auto;
-	text-align: center;
-}
+/* Generic settings and rules */
+*{margin: 0; padding: 0}
+html{height: 100%; margin: 0 0 1px}
+body{background: #111; color: #eee; font: small/1.5em Arial, Helvetica, sans-serif; margin: 0 auto; text-align: center}
+a:link{color: #6F9BDE}
+a:active, a:focus, a:hover{color: #DE6F78; text-decoration: none}
+a:visited{color: #9B6FDD}
+#wrapper{margin: 0 auto; text-align: left; width: 960px}
+abbr{border-bottom: 1px dotted #eee; cursor: help}
+.odd{background-color: #161616}
+.right{float: right}
 
-a:link{
-	color: #6F9BDE;
-}
-a:active, a:focus, a:hover{
-	color: #DE6F78;
-	text-decoration: none;
-}
-a:visited{
-	color: #9B6FDD;
-}
+/* Basic typography */
+h1, h2, h3, h4, h5, h6{font-family: Georgia, "Times New Roman", Times, serif; font-weight: bold}
+h1, h2{font-size: 138.5%; margin-bottom: 1em}
+h3{font-size: 131%; margin-bottom: .75em}
+h4{font-size: 123.1%; margin-bottom: .5em}
+h5{font-size: 116%; margin-bottom: .25em}
+h6{font-size: 108%}
+blockquote, p, ol, ul{margin-bottom: 1.5em}
+ol, ul{padding-left: 1em}
+blockquote{border-left: 2px solid #666; font-size: 93%; padding-left: 1em}
+.del, del{text-decoration: line-through}
+table{border-collapse: collapse; margin-bottom: 1.5em; width: 100%}
+table tr{vertical-align: top}
+table tr th{background-color: #eee; color: #111; padding: .25em}
+table tr td{padding: .25em}
 
-#wrapper{
-	background: transparent;
-	margin: 0 auto;
-	text-align: left;
-	width: 960px;
-}
+/* Combined rules */
+#header, #content, #footer{margin-left: 80px}
+#header a, #side a, #footer a, #content .navigation a{color: #ddd; text-decoration: none}
+#header a:active, #header a:focus, #header a:hover, #content .navigation a:active, #content .navigation a:focus, #content .navigation a:hover, .comments a:active, .comments a:focus, .comments a:hover, #side a:active, #side a:focus, #side a:hover, #footer a:active, #footer a:focus, #footer a:hover, ol.commentlist cite.comment-meta a:active, ol.commentlist cite.comment-meta a:focus, ol.commentlist cite.comment-meta a:hover{color: #fff; text-decoration: underline}
+#side h2, #footer h2{font-family: Arial, Helvetica, sans-serif; font-size: 123.1%; margin-bottom: .5em}
+ul#nav, #content .navigation{font-size: 116%}
+.left, #header, #header h1, #header #logo, ul#nav, #header p, #content, .date, .comments a, .comments span, #side, #flickr img, img.avatar, #footer{float: left}
+#twitter cite, #twitter cite a, ol.commentlist cite.comment-meta, ol.commentlist cite.comment-meta a{color: #999}
+#twitter cite, ol.commentlist cite.comment-meta{display: block; font-size: 84.6%; font-style: normal; text-align: right}
+#twitter cite a, ol.commentlist cite.comment-meta a{text-decoration: none}
 
-#header{
-	background: #111;
-	margin-left: 80px;
-	width: 620px;
-}
-#header a{
-	color: #eee;
-	display: block;
-	text-decoration: none;
-}
-#header a#skip-link{
-	color: #111;
-	display: block;
-	text-align: right;
-}
-#header a#skip-link:active, #header a#skip-link:focus, #header a#skip-link:hover{
-	color: #fff;
-	text-decoration: underline;
-}
-#header h1, #header p{
-	font: bold 167% Helvetica, Arial, sans-serif; /* 22 pts */
-	margin-bottom: 0;
-}
-#header h1 span, #header p span{
-	color: #ccc;
-	display: block;
-	font-size: 60%; /* 13 pts */
-	font-weight: normal;
-}
-#header h1 a:active, #header p a:active, #header h1 a:focus, #header p a:focus, #header h1 a:hover, #header p a:hover{
-	color: #fff !important;
-}
-#header h1 a:active span, #header p a:active span, #header h1 a:focus span, #header p a:focus span, #header h1 a:hover span, #header p a:hover span{
-	color: #ddd;
-}
+/* Header and navigation */
+#header{margin-bottom: 20px}
+a#skip-link{color: #111; display: block; padding-bottom: 20px; text-align: right}
+a#skip-link:active, a#skip-link:focus, a#skip-link:hover{color: #fff}
+#header h1, #header #logo, ul#nav{width: 240px}
+#header h1, #header #logo{margin-bottom: 20px}
+#header h1 a, #header #logo a{background: #111 url(assets/images/logo.png) no-repeat left top; display: block; height: 40px; text-indent: -9999px}
+#header h1 a:hover, #header #logo a:hover{background-position: 0 -43px}
+ul#nav{clear: left; padding: 0}
+ul#nav li{display: inline}
+ul#nav a{padding-right: 20px}
+#header p{background: #111 url(assets/images/avatar.jpg) no-repeat right top; margin-top: -96px; margin-left: 260px; min-height: 60px; padding-right: 80px}
 
-#nav ul{
-	margin: 0;
-	padding: 0;
-}
-#nav ul li{
-	display: inline;
-	float: left;
-	line-height: 1em;
-	padding: 20px 0;
-}
-#nav ul li span{
-	color: #ccc;
-	display: block;
-	font-size: 77%; /* 10 pts */
-}
-#nav a{
-	color: #ddd;
-	display: block;
-	padding-right: 20px;
-	text-decoration: none;
-}
-#nav a:active, #nav a:focus, #nav a:hover{
-	color: #fff;
-}
-#nav ul li a:active span, #nav ul li a:focus span, #nav ul li a:hover span{
-	color: #ddd;
-}
+/* Main content and aside */
+#content, #side{padding: 20px 0}
+#content{border: 1px solid #222; border-left: none; padding-right: 60px; width: 819px; /* width: 560px; */}
+.entry{margin-bottom: 60px}
+.date, .comments a, .comments span{margin-left: -80px}
+.date{background: #eee; color: #111; font-family: Georgia, "Times New Roman", Times, serif; font-size: 108%; padding: .5em 0; text-align: center; width: 60px}
+.date strong{display: block}
+.comments a, .comments span{background: #111 url(assets/images/comment.png) no-repeat left top; clear: left; color: #999; margin-top: .5em; padding-left: 20px; text-decoration: none}
+.navigation{text-align: center}
+.photo-well{margin: 0 20px 20px 0}
+.cutline{font-size: 77%}
+#side{padding-left: 20px; width: 239px}
+#twitter ul{list-style-type: none; border-top: 1px solid #222; padding: 0}
+#twitter ul li{border-bottom: 1px solid #222; padding: .75em 0}
+#readernaut{margin-bottom: 20px}
+#flickr a img, #readernaut a img{border: none}
+#flickr img, #readernaut img{padding: 5px 4px 0 0; vertical-align: top}
 
-table{
-    margin-bottom: 1.5em;
-    width: 100%;
-}
-table tr th{
-    background-color: #eee;
-    color: #111;
-    padding: .25em;
-}
-table tr td{
-    padding: .25em;
-}
+/* Comments and comment form */
+#comments{margin-top: 20px}
+ol.commentlist{list-style-type: none; padding-left: 0}
+ol.commentlist li{padding: .75em 0; min-height: 80px}
+img.avatar{margin-left: -80px}
+#commentform label{cursor: pointer; display: block}
+#commentform textarea, #commentform input#author, #commentform input#email, #commentform input#url{margin: 7px 0; padding: .1em; width: 560px}
+#commentform textarea:focus, #commentform input:focus{background-color: #fffeee}
 
-#content-wrapper{
-	background: transparent;
-	clear: left;
-	color: #eee;
-	float: left;
-	padding-top: 20px;
-}
-#content{
-	background: transparent;
-	float: left;
-	padding-right: 60px;
-	width: 640px;
-}
+/* Footer */
+#footer{clear: left; margin-top: 20px; width: 880px}
+#footer p{text-align: center}
 
-.entry, .entry-page{
-	margin-left: 80px;
-}
-.entry{
-	margin-bottom: 60px;
-}
-.date{
-	background: #eee;
-	border: 1px solid #eee;
-	color: #000;
-	float: left;
-	font-family: Georgia, serif;
-	font-size: 108%; /* 14 pts */
-	margin-left: -80px;
-	padding: .5em 0;
-	text-align: center;
-	width: 58px;
-}
-.date strong{
-	display: block;
-	font-weight: bold;
-}
-.entry > .comments{
-	clear: left;
-	float: left;
-	margin: .5em 0 0 -80px;
-}
-.entry > .comments a{
-	background: url(comment.png) no-repeat left top;
-	color: #999;
-	padding: 1px 0 0 20px;
-	text-decoration: none;
-}
-.entry > .comments a:active, .entry > .comments a:focus, .entry > .comments a:hover{
-	color: #fff;
-	text-decoration: underline;
-}
-
-.photo-well{
-	margin: 0 20px 20px 0;
-}
-.full{
-	margin: 0;
-}
-.cutline{
-    font-size: 77%; /* 10 pts*/
-}
-.footnote{
-    background-color: #161616;
-    border-top: 1px solid #222;
-    border-bottom: 1px solid #222;
-    margin-bottom: 1.5em;
-    padding: .75em 0;
-}
-.footnote > blockquote{
-    margin-bottom: 0;
-}
-.postmetadata{
-	margin-bottom: 40px;
-}
-
-#side{
-	border-left: 1px solid #222;
-	color: #eee;
-	float: left;
-	padding: 20px 0 0 19px;
-	width: 240px;
-}
-
-/* Twitter API styling */
-#twitter ul, .commentlist{
-	list-style-type: none;
-	border-top: 1px solid #222;
-	padding: 0;
-}
-#twitter ul li, .commentlist li{
-	border-bottom: 1px solid #222;
-	padding: .75em .5em 0;
-}
-#twitter cite, .comment-meta{
-	color: #999;
-	display: block;
-	font-size: 84.6%; /* 11 pts */
-	font-style: normal;
-	text-align: right;
-}
-#twitter cite a, .comment-meta a{
-	color: #999;
-	text-decoration: none;
-}
-#twitter cite a:active, #twitter cite a:focus, #twitter cite a:hover, .comment-meta a:active, .comment-meta a:focus, .comment-meta a:hover{
-	color: #fff;
-	text-decoration: underline;
-}
-
-#flickr{
-	width: 240px;
-}
-#flickr img{
-	float: left;
-	padding: 5px 5px 0 0;
-}
-#flickr a img{
-	border: none;
-}
-
-#footer{
-	clear: both;
-	color: #eee;
-	margin-top: 20px;
-	margin-bottom: 20px;
-	text-align: center;
-	width: 700px;
-}
-
-/* Comment styling */
-.commentlist .avatar{
-	display: none;
-}
-.comment-meta cite{
-	font-style: normal;
-}
-#commentform{
-	margin-left: 0;
-}
-#commentform textarea{
-	width: 540px;
-}
-
-.odd{
-	background-color: #161616;
-}
-
-/* Basic Typography */
-h1, h2, h3, h4, h5, h6{
-	font-family: Georgia, serif;
-	font-weight: bold;
-}
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a{
-	display: block;
-	color: #eee !important;
-	text-decoration: none;
-}
-h1 a:active, h2 a:active, h1 a:focus, h2 a:focus, h1 a:hover, h2 a:hover, h4 a:focus, h4 a:hover, h4 a:hover{
-	text-decoration: underline;
-}
-h1, h2{
-	font-size: 138.5%; /* 18pts */
-	margin-bottom: 1em;
-}
-h3{
-	font-size: 131%; /* 17pts */
-	margin-bottom: .75em;
-}
-h4{
-	font-size: 123.1%; /* 16pts */
-	margin-bottom: .5em;
-}
-h5{
-	font-size: 116%; /* 15 pts */
-	margin-bottom: .25em;
-}
-h6{
-	font-size: 108% /* 14pts */
-
-}
-blockquote, p, ol, ul{
-	margin-bottom: 1.5em;
-}
-
-ol, ul{
-	padding-left: 1em;
-}
-blockquote{
-    border-left: 2px solid #666;
-    font-size: 93%; /* 12pts */
-    padding-left: 1em;
-}
-
-.del{
-    text-decoration: line-through;
-}
-
-.left{
-	float: left;
-}
-.right{
-	float: right;
-}
+/* Code formatting */
+#content pre { background-color: #333; border: 1px solid #666; font-size: 100%; margin-bottom: 1.5em; overflow: auto; padding: .5em .5em 1.5em; }
+.repost { background-color: #333; border: 1px solid #666; color: #fff; padding: .75em .5em; }

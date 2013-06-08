@@ -1,0 +1,15 @@
+body{color: #000; font: 14px/1.5em Arial, Helvetica, sans-serif; margin: 0 auto; text-align: left}
+a#skip-link, ul#nav, #header p, #footer{display: none}
+#header #logo a{color: #000; font-size: 24px; text-decoration: none}
+h1, h2, h3, #content blockquote, #side h2{font-family: Georgia, "Times New Roman", Times, serif; font-weight: normal}
+#content{width: 100%}
+#content{page-break-after:always}
+#content h1 a{color: #000; font-size: 22px; text-decoration: none}
+#content h2{font-size: 18px}
+#content h3{font-size: 17px}
+#content blockquote, #side blockquote{border-left: none; font-size: 100%; padding-left: 0; margin-left: 0}
+#content blockquote{border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; padding: .75em 0; margin-bottom: 2.25em}
+#content blockquote p{color: #ddd; line-height: 2.25em}
+#content ul{list-style-position: inside; padding-left: 0}
+#side blockquote{margin-bototm: 1.5em}
+.left-quote{font-size: 200%}
