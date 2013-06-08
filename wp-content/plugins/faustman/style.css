@@ -1,0 +1,324 @@
+/*
+Theme Name: Faustman
+Theme URI: http://jonfaustman.com/
+Description: My own theme.
+Version: 1.2
+Author: Jon Faustman
+Author URI: http://jonfaustman.com/
+
+*/
+
+*{
+	margin: 0;
+	padding: 0;
+}
+html{
+	height: 100%;
+	margin: 0 0 1px;
+}
+body{
+	background: #111;
+	color: #eee;
+	font: small/1.5em Helvetica, Arial, sans-serif; /* 13 pts */
+	margin: 0 auto;
+	text-align: center;
+}
+
+a:link{
+	color: #6F9BDE;
+}
+a:active, a:focus, a:hover{
+	color: #DE6F78;
+	text-decoration: none;
+}
+a:visited{
+	color: #9B6FDD;
+}
+
+#wrapper{
+	background: transparent;
+	margin: 0 auto;
+	text-align: left;
+	width: 960px;
+}
+
+#header{
+	background: #111;
+	margin-left: 80px;
+	width: 620px;
+}
+#header a{
+	color: #eee;
+	display: block;
+	text-decoration: none;
+}
+#header a#skip-link{
+	color: #111;
+	display: block;
+	text-align: right;
+}
+#header a#skip-link:active, #header a#skip-link:focus, #header a#skip-link:hover{
+	color: #fff;
+	text-decoration: underline;
+}
+#header h1, #header p{
+	font: bold 167% Helvetica, Arial, sans-serif; /* 22 pts */
+	margin-bottom: 0;
+}
+#header h1 span, #header p span{
+	color: #ccc;
+	display: block;
+	font-size: 60%; /* 13 pts */
+	font-weight: normal;
+}
+#header h1 a:active, #header p a:active, #header h1 a:focus, #header p a:focus, #header h1 a:hover, #header p a:hover{
+	color: #fff !important;
+}
+#header h1 a:active span, #header p a:active span, #header h1 a:focus span, #header p a:focus span, #header h1 a:hover span, #header p a:hover span{
+	color: #ddd;
+}
+
+#nav ul{
+	margin: 0;
+	padding: 0;
+}
+#nav ul li{
+	display: inline;
+	float: left;
+	line-height: 1em;
+	padding: 20px 0;
+}
+#nav ul li span{
+	color: #ccc;
+	display: block;
+	font-size: 77%; /* 10 pts */
+}
+#nav a{
+	color: #ddd;
+	display: block;
+	padding-right: 20px;
+	text-decoration: none;
+}
+#nav a:active, #nav a:focus, #nav a:hover{
+	color: #fff;
+}
+#nav ul li a:active span, #nav ul li a:focus span, #nav ul li a:hover span{
+	color: #ddd;
+}
+
+table{
+    margin-bottom: 1.5em;
+    width: 100%;
+}
+table tr th{
+    background-color: #eee;
+    color: #111;
+    padding: .25em;
+}
+table tr td{
+    padding: .25em;
+}
+
+#content-wrapper{
+	background: transparent;
+	clear: left;
+	color: #eee;
+	float: left;
+	padding-top: 20px;
+}
+#content{
+	background: transparent;
+	float: left;
+	padding-right: 60px;
+	width: 640px;
+}
+
+.entry, .entry-page{
+	margin-left: 80px;
+}
+.entry{
+	margin-bottom: 60px;
+}
+.date{
+	background: #eee;
+	border: 1px solid #eee;
+	color: #000;
+	float: left;
+	font-family: Georgia, serif;
+	font-size: 108%; /* 14 pts */
+	margin-left: -80px;
+	padding: .5em 0;
+	text-align: center;
+	width: 58px;
+}
+.date strong{
+	display: block;
+	font-weight: bold;
+}
+.entry > .comments{
+	clear: left;
+	float: left;
+	margin: .5em 0 0 -80px;
+}
+.entry > .comments a{
+	background: url(comment.png) no-repeat left top;
+	color: #999;
+	padding: 1px 0 0 20px;
+	text-decoration: none;
+}
+.entry > .comments a:active, .entry > .comments a:focus, .entry > .comments a:hover{
+	color: #fff;
+	text-decoration: underline;
+}
+
+.photo-well{
+	margin: 0 20px 20px 0;
+}
+.full{
+	margin: 0;
+}
+.cutline{
+    font-size: 77%; /* 10 pts*/
+}
+.footnote{
+    background-color: #161616;
+    border-top: 1px solid #222;
+    border-bottom: 1px solid #222;
+    margin-bottom: 1.5em;
+    padding: .75em 0;
+}
+.footnote > blockquote{
+    margin-bottom: 0;
+}
+.postmetadata{
+	margin-bottom: 40px;
+}
+
+#side{
+	border-left: 1px solid #222;
+	color: #eee;
+	float: left;
+	padding: 20px 0 0 19px;
+	width: 240px;
+}
+
+/* Twitter API styling */
+#twitter ul, .commentlist{
+	list-style-type: none;
+	border-top: 1px solid #222;
+	padding: 0;
+}
+#twitter ul li, .commentlist li{
+	border-bottom: 1px solid #222;
+	padding: .75em .5em 0;
+}
+#twitter cite, .comment-meta{
+	color: #999;
+	display: block;
+	font-size: 84.6%; /* 11 pts */
+	font-style: normal;
+	text-align: right;
+}
+#twitter cite a, .comment-meta a{
+	color: #999;
+	text-decoration: none;
+}
+#twitter cite a:active, #twitter cite a:focus, #twitter cite a:hover, .comment-meta a:active, .comment-meta a:focus, .comment-meta a:hover{
+	color: #fff;
+	text-decoration: underline;
+}
+
+#flickr{
+	width: 240px;
+}
+#flickr img{
+	float: left;
+	padding: 5px 5px 0 0;
+}
+#flickr a img{
+	border: none;
+}
+
+#footer{
+	clear: both;
+	color: #eee;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	text-align: center;
+	width: 700px;
+}
+
+/* Comment styling */
+.commentlist .avatar{
+	display: none;
+}
+.comment-meta cite{
+	font-style: normal;
+}
+#commentform{
+	margin-left: 0;
+}
+#commentform textarea{
+	width: 540px;
+}
+
+.odd{
+	background-color: #161616;
+}
+
+/* Basic Typography */
+h1, h2, h3, h4, h5, h6{
+	font-family: Georgia, serif;
+	font-weight: bold;
+}
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a{
+	display: block;
+	color: #eee !important;
+	text-decoration: none;
+}
+h1 a:active, h2 a:active, h1 a:focus, h2 a:focus, h1 a:hover, h2 a:hover, h4 a:focus, h4 a:hover, h4 a:hover{
+	text-decoration: underline;
+}
+h1, h2{
+	font-size: 138.5%; /* 18pts */
+	margin-bottom: 1em;
+}
+h3{
+	font-size: 131%; /* 17pts */
+	margin-bottom: .75em;
+}
+h4{
+	font-size: 123.1%; /* 16pts */
+	margin-bottom: .5em;
+}
+h5{
+	font-size: 116%; /* 15 pts */
+	margin-bottom: .25em;
+}
+h6{
+	font-size: 108% /* 14pts */
+
+}
+blockquote, p, ol, ul{
+	margin-bottom: 1.5em;
+}
+
+ol, ul{
+	padding-left: 1em;
+}
+blockquote{
+    border-left: 2px solid #666;
+    font-size: 93%; /* 12pts */
+    padding-left: 1em;
+}
+
+.del{
+    text-decoration: line-through;
+}
+
+.left{
+	float: left;
+}
+.right{
+	float: right;
+}
