@@ -8,88 +8,445 @@ Author URI: http://jonfaustman.com/
 */
 
 /* Generic settings and rules */
-*{margin: 0; padding: 0}
-html{height: 100%; margin: 0 0 1px}
-body{background: #111; color: #eee; font: small/1.5em Arial, Helvetica, sans-serif; margin: 0 auto; text-align: center}
-a:link{color: #6F9BDE}
-a:active, a:focus, a:hover{color: #DE6F78; text-decoration: none}
-a:visited{color: #9B6FDD}
-#wrapper{margin: 0 auto; text-align: left; width: 960px}
-abbr{border-bottom: 1px dotted #eee; cursor: help}
-.odd{background-color: #161616}
-.right{float: right}
+*  {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+    margin: 0 0 1px;
+}
+
+body {
+    background: #111;
+    color: #eee;
+    font: small/1.5em Arial, Helvetica, sans-serif;
+    margin: 0 auto;
+    text-align: center;
+}
+
+a:link {
+    color: #6F9BDE;
+}
+
+a:active,
+a:focus,
+a:hover {
+    color: #DE6F78;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #9B6FDD;
+}
+
+#wrapper {
+    margin: 0 auto;
+    text-align: left;
+    width: 960px;
+}
+
+abbr {
+    border-bottom: 1px dotted #eee;
+    cursor: help;
+}
+
+.odd {
+    background-color: #161616;
+}
+
+.right {
+    float: right;
+}
+
 
 /* Basic typography */
-h1, h2, h3, h4, h5, h6{font-family: Georgia, "Times New Roman", Times, serif; font-weight: bold}
-h1, h2{font-size: 138.5%; margin-bottom: 1em}
-h3{font-size: 131%; margin-bottom: .75em}
-h4{font-size: 123.1%; margin-bottom: .5em}
-h5{font-size: 116%; margin-bottom: .25em}
-h6{font-size: 108%}
-blockquote, p, ol, ul{margin-bottom: 1.5em}
-ol, ul{padding-left: 1em}
-blockquote{border-left: 2px solid #666; font-size: 93%; padding-left: 1em}
-.del, del{text-decoration: line-through}
-table{border-collapse: collapse; margin-bottom: 1.5em; width: 100%}
-table tr{vertical-align: top}
-table tr th{background-color: #eee; color: #111; padding: .25em}
-table tr td{padding: .25em}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-weight: bold;
+}
+
+h1,
+h2 {
+    font-size: 138.5%;
+    margin-bottom: 1em;
+}
+
+h3 {
+    font-size: 131%;
+    margin-bottom: .75em;
+}
+
+h4 {
+    font-size: 123.1%;
+    margin-bottom: .5em;
+}
+
+h5 {
+    font-size: 116%;
+    margin-bottom: .25em;
+}
+
+h6 {
+    font-size: 108%;
+}
+
+blockquote,
+p,
+ol,
+ul {
+    margin-bottom: 1.5em;
+}
+
+ol,
+ul {
+    padding-left: 1em;
+}
+
+blockquote {
+    border-left: 2px solid #666;
+    font-size: 93%;
+    padding-left: 1em;
+}
+
+.del,
+del {
+    text-decoration: line-through;
+}
+
+table {
+    border-collapse: collapse;
+    margin-bottom: 1.5em;
+    width: 100%;
+}
+
+table tr {
+    vertical-align: top;
+}
+
+table tr th {
+    background-color: #eee;
+    color: #111;
+    padding: .25em;
+}
+
+table tr td {
+    padding: .25em;
+}
+
 
 /* Combined rules */
-#header, #content, #footer{margin-left: 80px}
-#header a, #side a, #footer a, #content .navigation a{color: #ddd; text-decoration: none}
-#header a:active, #header a:focus, #header a:hover, #content .navigation a:active, #content .navigation a:focus, #content .navigation a:hover, .comments a:active, .comments a:focus, .comments a:hover, #side a:active, #side a:focus, #side a:hover, #footer a:active, #footer a:focus, #footer a:hover, ol.commentlist cite.comment-meta a:active, ol.commentlist cite.comment-meta a:focus, ol.commentlist cite.comment-meta a:hover{color: #fff; text-decoration: underline}
-#side h2, #footer h2{font-family: Arial, Helvetica, sans-serif; font-size: 123.1%; margin-bottom: .5em}
-ul#nav, #content .navigation{font-size: 116%}
-.left, #header, #header h1, #header #logo, ul#nav, #header p, #content, .date, .comments a, .comments span, #side, #flickr img, img.avatar, #footer{float: left}
-#twitter cite, #twitter cite a, ol.commentlist cite.comment-meta, ol.commentlist cite.comment-meta a{color: #999}
-#twitter cite, ol.commentlist cite.comment-meta{display: block; font-size: 84.6%; font-style: normal; text-align: right}
-#twitter cite a, ol.commentlist cite.comment-meta a{text-decoration: none}
+#header,
+#content,
+#footer {
+    margin-left: 80px;
+}
+
+#header a,
+#side a,
+#footer a,
+#content .navigation a {
+    color: #ddd;
+    text-decoration: none;
+}
+
+#header a:active,
+#header a:focus,
+#header a:hover,
+#content .navigation a:active,
+#content .navigation a:focus,
+#content .navigation a:hover,
+.comments a:active,
+.comments a:focus,
+.comments a:hover,
+#side a:active,
+#side a:focus,
+#side a:hover,
+#footer a:active,
+#footer a:focus,
+#footer a:hover,
+ol.commentlist cite.comment-meta a:active,
+ol.commentlist cite.comment-meta a:focus,
+ol.commentlist cite.comment-meta a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+#side h2,
+#footer h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 123.1%;
+    margin-bottom: .5em;
+}
+
+ul#nav,
+#content .navigation {
+    font-size: 116%;
+}
+
+.left,
+#header,
+#header h1,
+#header #logo,
+ul#nav,
+#header p,
+#content,
+.date,
+.comments a,
+.comments span,
+#side,
+#flickr img,
+img.avatar,
+#footer {
+    float: left;
+}
+
+#twitter cite,
+#twitter cite a,
+ol.commentlist cite.comment-meta,
+ol.commentlist cite.comment-meta a {
+    color: #999;
+}
+
+#twitter cite,
+ol.commentlist cite.comment-meta {
+    display: block;
+    font-size: 84.6%;
+    font-style: normal;
+    text-align: right;
+}
+
+#twitter cite a,
+ol.commentlist cite.comment-meta a {
+    text-decoration: none;
+}
+
 
 /* Header and navigation */
-#header{margin-bottom: 20px}
-a#skip-link{color: #111; display: block; padding-bottom: 20px; text-align: right}
-a#skip-link:active, a#skip-link:focus, a#skip-link:hover{color: #fff}
-#header h1, #header #logo, ul#nav{width: 240px}
-#header h1, #header #logo{margin-bottom: 20px}
-#header h1 a, #header #logo a{background: #111 url(assets/images/logo.png) no-repeat left top; display: block; height: 40px; text-indent: -9999px}
-#header h1 a:hover, #header #logo a:hover{background-position: 0 -43px}
-ul#nav{clear: left; padding: 0}
-ul#nav li{display: inline}
-ul#nav a{padding-right: 20px}
-#header p{background: #111 url(assets/images/avatar.jpg) no-repeat right top; margin-top: -96px; margin-left: 260px; min-height: 60px; padding-right: 80px}
+#header {
+    margin-bottom: 20px;
+}
+
+a#skip-link {
+    color: #111;
+    display: block;
+    padding-bottom: 20px;
+    text-align: right;
+}
+
+a#skip-link:active,
+a#skip-link:focus,
+a#skip-link:hover {
+    color: #fff;
+}
+
+#header h1,
+#header #logo,
+ul#nav {
+    width: 240px;
+}
+
+#header h1,
+#header #logo {
+    margin-bottom: 20px;
+}
+
+#header h1 a,
+#header #logo a {
+    background: #111 url(assets/images/logo.png) no-repeat left top;
+    display: block;
+    height: 40px;
+    text-indent: -9999px;
+}
+
+#header h1 a:hover,
+#header #logo a:hover {
+    background-position: 0 -43px;
+}
+
+ul#nav {
+    clear: left;
+    padding: 0;
+}
+
+ul#nav li {
+    display: inline;
+}
+
+ul#nav a {
+    padding-right: 20px;
+}
+
+#header p {
+    background: #111 url(assets/images/avatar.jpg) no-repeat right top;
+    margin-top: -96px;
+    margin-left: 260px;
+    min-height: 60px;
+    padding-right: 80px;
+}
 
 /* Main content and aside */
-#content, #side{padding: 20px 0}
-#content{border: 1px solid #222; border-left: none; padding-right: 60px; width: 819px; /* width: 560px; */}
-.entry{margin-bottom: 60px}
-.date, .comments a, .comments span{margin-left: -80px}
-.date{background: #eee; color: #111; font-family: Georgia, "Times New Roman", Times, serif; font-size: 108%; padding: .5em 0; text-align: center; width: 60px}
-.date strong{display: block}
-.comments a, .comments span{background: #111 url(assets/images/comment.png) no-repeat left top; clear: left; color: #999; margin-top: .5em; padding-left: 20px; text-decoration: none}
-.navigation{text-align: center}
-.photo-well{margin: 0 20px 20px 0}
-.cutline{font-size: 77%}
-#side{padding-left: 20px; width: 239px}
-#twitter ul{list-style-type: none; border-top: 1px solid #222; padding: 0}
-#twitter ul li{border-bottom: 1px solid #222; padding: .75em 0}
-#readernaut{margin-bottom: 20px}
-#flickr a img, #readernaut a img{border: none}
-#flickr img, #readernaut img{padding: 5px 4px 0 0; vertical-align: top}
+#content,
+#side {
+    padding: 20px 0;
+}
+
+#content {
+    border: 1px solid #222;
+    border-left: none;
+    padding-right: 60px;
+    width: 819px;
+    /* width: 560px; */
+}
+
+.entry {
+    margin-bottom: 60px;
+}
+
+.date,
+.comments a,
+.comments span {
+    margin-left: -80px;
+}
+
+.date {
+    background: #eee;
+    color: #111;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 108%;
+    padding: .5em 0;
+    text-align: center;
+    width: 60px;
+}
+
+.date strong {
+    display: block;
+}
+
+.comments a,
+.comments span {
+    background: #111 url(assets/images/comment.png) no-repeat left top;
+    clear: left;
+    color: #999;
+    margin-top: .5em;
+    padding-left: 20px;
+    text-decoration: none;
+}
+
+.navigation {
+    text-align: center;
+}
+
+.photo-well {
+    margin: 0 20px 20px 0;
+}
+
+.cutline {
+    font-size: 77%;
+}
+
+#side {
+    padding-left: 20px;
+    width: 239px;
+}
+
+#twitter ul {
+    list-style-type: none;
+    border-top: 1px solid #222;
+    padding: 0;
+}
+
+#twitter ul li {
+    border-bottom: 1px solid #222;
+    padding: .75em 0;
+}
+
+#readernaut {
+    margin-bottom: 20px;
+}
+
+#flickr a img,
+#readernaut a img {
+    border: none;
+}
+
+#flickr img,
+#readernaut img {
+    padding: 5px 4px 0 0;
+    vertical-align: top;
+}
+
 
 /* Comments and comment form */
-#comments{margin-top: 20px}
-ol.commentlist{list-style-type: none; padding-left: 0}
-ol.commentlist li{padding: .75em 0; min-height: 80px}
-img.avatar{margin-left: -80px}
-#commentform label{cursor: pointer; display: block}
-#commentform textarea, #commentform input#author, #commentform input#email, #commentform input#url{margin: 7px 0; padding: .1em; width: 560px}
-#commentform textarea:focus, #commentform input:focus{background-color: #fffeee}
+#comments {
+    margin-top: 20px;
+}
+
+ol.commentlist {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ol.commentlist li {
+    padding: .75em 0;
+    min-height: 80px;
+}
+
+img.avatar {
+    margin-left: -80px;
+}
+
+#commentform label {
+    cursor: pointer;
+    display: block;
+}
+
+#commentform textarea,
+#commentform input#author,
+#commentform input#email,
+#commentform input#url {
+    margin: 7px 0;
+    padding: .1em;
+    width: 560px;
+}
+
+#commentform textarea:focus,
+#commentform input:focus {
+    background-color: #fffeee;
+}
+
 
 /* Footer */
-#footer{clear: left; margin-top: 20px; width: 880px}
-#footer p{text-align: center}
+#footer {
+    clear: left;
+    margin-top: 20px;
+    width: 880px;
+}
+
+#footer p {
+    text-align: center;
+}
+
 
 /* Code formatting */
-#content pre { background-color: #333; border: 1px solid #666; font-size: 100%; margin-bottom: 1.5em; overflow: auto; padding: .5em .5em 1.5em; }
-.repost { background-color: #333; border: 1px solid #666; color: #fff; padding: .75em .5em; }
+#content pre  {
+     background-color: #333;
+    border: 1px solid #666;
+    font-size: 100%;
+    margin-bottom: 1.5em;
+    overflow: auto;
+    padding: .5em .5em 1.5em;
+}
+
+.repost  {
+     background-color: #333;
+    border: 1px solid #666;
+    color: #fff;
+    padding: .75em .5em;
+}
