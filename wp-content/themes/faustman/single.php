@@ -8,17 +8,19 @@ get_header(); ?>
 
 <div id="content">
 
-<script type="text/javascript"><!--
-google_ad_client = "ca-pub-4502909301189493";
-/* Default */
-google_ad_slot = "7581999967";
-google_ad_width = 728;
-google_ad_height = 90;
-//-->
-</script>
-<script type="text/javascript"
-src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>
+<?php /** Comment out Google Adsense for now
+/*  <script type="text/javascript"><!--
+/*  google_ad_client = "ca-pub-4502909301189493";
+/*  /* Default */
+/*  google_ad_slot = "7581999967";
+/*  google_ad_width = 728;
+/*  google_ad_height = 90;
+/*  //-->
+/*  </script>
+/*  <script type="text/javascript"
+/*  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+/*  </script>
+**/ ?>
 
 <?php if (have_posts()) : ?>
 <?php while (have_posts()) : the_post(); ?>
@@ -32,16 +34,12 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 
 <div class="entry">
 <?php the_content('Read the rest of this entry &raquo;'); ?>
-
-<div class="postmetadata">
-<?php comments_template(); ?>
-</div>
-
 </div>
 
 </div>
 
 <?php endwhile; ?>
+
 
 <?php else : ?>
 
@@ -51,17 +49,19 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 
 <?php endif; ?>
 
-<script type="text/javascript"><!--
-google_ad_client = "ca-pub-4502909301189493";
-/* Default */
-google_ad_slot = "7581999967";
-google_ad_width = 728;
-google_ad_height = 90;
-//-->
-</script>
-<script type="text/javascript"
-src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>
+<?php /** Comment out Google Adsense for now
+/*  <script type="text/javascript"><!--
+/*  google_ad_client = "ca-pub-4502909301189493";
+/*  /* Default */
+/*  google_ad_slot = "7581999967";
+/*  google_ad_width = 728;
+/*  google_ad_height = 90;
+/*  //-->
+/*  </script>
+/*  <script type="text/javascript"
+/*  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+/*  </script>
+**/ ?>
 
 </div>
 
