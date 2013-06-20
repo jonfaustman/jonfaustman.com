@@ -185,7 +185,7 @@ ol.commentlist cite.comment-meta a:hover {
     margin-bottom: .5em;
 }
 
-ul#nav,
+#nav,
 #content .navigation {
     font-size: 116%;
 }
@@ -194,7 +194,7 @@ ul#nav,
 #header,
 #header h1,
 #header #logo,
-ul#nav,
+#nav,
 #header p,
 #content,
 .date,
@@ -248,7 +248,7 @@ a#skip-link:hover {
 
 #header h1,
 #header #logo,
-ul#nav {
+#nav {
     width: 240px;
 }
 
@@ -270,16 +270,13 @@ ul#nav {
     background-position: 0 -43px;
 }
 
-ul#nav {
+#nav {
     clear: left;
     padding: 0;
 }
 
-ul#nav li {
-    display: inline;
-}
 
-ul#nav a {
+#nav > a {
     padding-right: 20px;
 }
 
