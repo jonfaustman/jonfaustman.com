@@ -42,15 +42,7 @@
     <header id="header">
 
         <a href="#content" id="skip-link" title="Skip to main content">Skip to main content</a>
-        <?php
-        $url = get_bloginfo('url');
-        if (is_home()) {
-            echo '<h1><a href="'.$url.'/">Jon Faustman</a></h1>';
-        } else {
-            echo '<div id="logo"><a href="'.$url.'/">Jon Faustman</a></div>';
-        }
-            echo "\n";
-        ?>
+        <a href="<?php get_bloginfo('url'); ?>" class="nav__logo">Jon Faustman</a>
 
         <nav id="nav">
             <a href="<?php echo $url.'/">'; if (is_home()) { echo '<strong>Home</strong>'; } else { echo 'Home'; } ?></a>

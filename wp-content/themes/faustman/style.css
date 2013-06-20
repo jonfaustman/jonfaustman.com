@@ -192,8 +192,7 @@ ol.commentlist cite.comment-meta a:hover {
 
 .left,
 #header,
-#header h1,
-#header #logo,
+.nav__logo,
 #nav,
 #header p,
 #content,
@@ -246,33 +245,30 @@ a#skip-link:hover {
     color: #fff;
 }
 
-#header h1,
-#header #logo,
+.nav__logo,
 #nav {
     width: 240px;
 }
 
-#header h1,
-#header #logo {
+.nav__logo {
     margin-bottom: 20px;
 }
 
-#header h1 a,
-#header #logo a {
+.nav__logo {
     background: #111 url(assets/images/logo.png) no-repeat left top;
     display: block;
     height: 40px;
     text-indent: -9999px;
 }
 
-#header h1 a:hover,
-#header #logo a:hover {
+.nav__logo:hover {
     background-position: 0 -43px;
 }
 
 #nav {
     clear: left;
     padding: 0;
+    margin-bottom: 1.5em;
 }
 
 
