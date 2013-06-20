@@ -28,8 +28,6 @@ get_header(); ?>
 
 <div class="date"><?php the_time('M') ?><strong><?php the_time('j') ?></strong></div>
 
-<div class="comments"><?php comments_popup_link('None', '1', '%', 'comments-link', 'Off'); ?></div>
-
 <h1><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
 
 <div class="entry">
