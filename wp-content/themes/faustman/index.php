@@ -11,7 +11,6 @@ get_header(); ?>
 
     <?php while (have_posts()) : the_post(); ?>
     <article <?php post_class('article') ?> id="post-<?php the_ID(); ?>">
-
         <time class="article__date date" pubdate datetime="<?php the_time('Y-m-d H:i'); ?>"><?php the_time('M') ?><i class="article__date--day"><?php the_time('j') ?></i></time>
 
         <h1 class="article__title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
