@@ -325,8 +325,10 @@ ul#nav a {
     width: 60px;
 }
 
-.date strong {
+.article__date--day {
     display: block;
+    font-style: normal;
+    font-weight: bold;
 }
 
 .comments a,
