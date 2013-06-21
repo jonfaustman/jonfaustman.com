@@ -7,6 +7,110 @@ Author: Jon Faustman
 Author URI: http://jonfaustman.com/
 */
 
+.header {
+    height: 12.462em; /* 162px */
+    position: relative;
+    margin-left: 6.154em; /* 80px */
+    width: 91.6667%; /* 880px */
+}
+
+.header > p {
+    background: url(assets/images/avatar.jpg) no-repeat right top;
+    box-sizing: border-box;
+    margin-bottom: 0;
+    min-height: 60px;
+    padding-right: 80px;
+    position: absolute;
+    right: 0;
+    top: 45px;
+    width: 70%;
+}
+
+.nav__link--skip {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.nav__link--logo {
+    background: url(assets/images/logo.png) no-repeat 0 -1px;
+    display: block;
+    height: 36px;
+    left: 0;
+    margin-bottom: 24px;
+    position: absolute;
+    text-indent: -999em;
+    top: 40px;
+    width: 30%;
+}
+
+.nav__link--logo:active,
+.nav__link--logo:hover {
+    background-position: 0 -44px;
+}
+.nav__link--home,
+.nav__link--about,
+.nav__link--contact {
+    background-color: #eee;
+    border: 3px solid #222;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-sizing: border-box;
+    color: #111;
+    display: inline-block;
+    font-weight: bold;
+    left: 0;
+    padding: .75em 0; 
+    position: absolute;
+    text-align: center;
+    text-decoration: none;
+    top: 120px;
+    transition: background-color .2s linear;
+    width: 6.923em; /* 90px */
+}
+
+.nav__link--home:link,
+.nav__link--home:visited,
+.nav__link--about:link,
+.nav__link--about:visited,
+.nav__link--contact:link,
+.nav__link--contact:visited {
+    color: #111;
+}
+
+.nav__link--home:active,
+.nav__link--home:hover,
+.nav__link--about:active,
+.nav__link--about:hover,
+.nav__link--contact:active,
+.nav__link--contact:hover {
+    background-color: #fff;
+}
+
+.nav__link--about {
+    left: 90px;
+}
+
+.nav__link--contact {
+    left: 180px;
+}
+
+.nav__link--active {
+    background-color: #111;
+    border-bottom-color: #111;
+    color: #eee;
+}
+
+.nav__link--active:link,
+.nav__link--active:visited {
+    color: #eee;
+}
+
+.nav__link--active:active,
+.nav__link--active:hover {
+    background-color: #111;
+}
+
 /* Generic settings and rules */
 *  {
     margin: 0;
@@ -17,6 +121,7 @@ html {
     height: 100%;
     margin: 0 0 1px;
 }
+
 
 body {
     background: #111;
