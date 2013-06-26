@@ -36,7 +36,7 @@
         ?>
         <script src="http://s.diaf.co/uv/djfrontend/js/modernizr/2.6.2/modernizr.min.js"></script>
     </head>
-<body>
+<body <?php body_class(); ?>>
 <div id="wrapper">
 
     <header class="header">
@@ -44,10 +44,8 @@
         <nav class="nav">
             <a href="#content" class="nav__link--skip" id="skip-link" title="Skip to main content">Skip to main content</a>
             <a href="<?php get_bloginfo('url'); ?>" class="nav__link--logo">Jon Faustman</a>
-            <a href="<?php echo $url.'/"'; echo 'class="', ((is_home()) ? 'nav__link--home nav__link--active"' : 'nav__link--home"'); ?>>Home</a>
-            <a href="<?php echo $url.'/about/"'; echo 'class="', ((is_page(About)) ? 'nav__link--about nav__link--active"' : 'nav__link--about"'); ?>>About</a>
-            <a href="<?php echo $url.'/contact/"'; echo 'class="', ((is_page(Contact)) ? 'nav__link--contact nave__link--active"' : 'nav__link--contact"'); ?>>Contact</a>
+            <a href="<?php echo $url.'/"'; echo 'class="', ((is_home()) ? 'nav__link nav__link--home nav__link--active"' : 'nav__link nav__link--home"'); ?>>Home</a>
+            <a href="<?php echo $url.'/about/"'; echo 'class="', ((is_page(About)) ? 'nav__link nav__link--about nav__link--active"' : 'nav__link nav__link--about"'); ?>>About</a>
+            <a href="http://hire.jonfaustman.com/" class="nav__link nav__link--hire">Resume</a>
         </nav>
-
-        <p>Hi! My name is Jon Faustman. I'm a front-end web developer currently living in Manhattan &ndash; no, not that one. I love turning beautiful mockups into functional websites using semantic web standards. I also really enjoy sarcasam and kittens. Not enough? <a href="<?php echo $url; ?>/about/">Find out more</a>.</p>
     </header>
