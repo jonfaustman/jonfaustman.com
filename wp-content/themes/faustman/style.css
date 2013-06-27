@@ -102,28 +102,31 @@ h1 {
 h2 {
     font-size: 20px;
     font-size: 1.5rem;
-    margin-bottom: .65em;
+    margin-bottom: 1em;
 }
 
 h3 {
     font-size: 18px;
     font-size: 1.385rem;
-    margin-bottom: .722em;
+    margin-bottom: 1.111em;
 }
 
 h4 {
     font-size: 16px;
     font-size: 1.231rem;
-    margin-bottom: .5em;
+    margin-bottom: 1.25em;
 }
 
 h5 {
     font-size: 14px;
-    margin-bottom: .25em;
+	font-size: 1.077rem;
+    margin-bottom: 1.429em;
 }
 
 h6 {
+	font-size: 13px;
     font-size: 1rem;
+	margin-bottom: 1.5em;
 }
 
 abbr {
@@ -232,6 +235,7 @@ a.nav__link--skip {
 .nav__link--logo:hover {
     background-position: 0 -58px;
 }
+
 .nav__link {
     background-color: #ddd;
     border: 3px solid #222;
@@ -290,7 +294,7 @@ a.nav__link--skip {
     border: 3px solid #333;
     border-left: none;
     margin-left: 6.154em; /* 80px */
-    padding: 1.5em 6.154em 1.5em 0;
+    padding: 1.5em 6.154em 0 0;
 }
 
 .article {
@@ -351,15 +355,20 @@ a .article__content {
     padding-right: 6.154em;
     position: absolute;
     right: 0;
-    top: 4.5em;
+    top: 5.385em; /* 70px */
     width: 75%;
 }
 
 .footer__heading--about {
     position: absolute;
     right: 0;
-    top: 1.5rem;
+    top: 1em; /* 20px */
     width: 75%;
+}
+
+.footer__social,
+.footer__heading--social {
+	width: 25%;
 }
 
 .footer__copy {
@@ -393,4 +402,53 @@ a .article__content {
     border: 1px solid #666;
     color: #fff;
     padding: .75em .5em;
+}
+
+.wp-pagenavi {
+	margin-bottom: -3px;
+}
+
+.wp-pagenavi > .current,
+.wp-pagenavi > .page,
+.wp-pagenavi > .previouspostslink,
+.wp-pagenavi > .first,
+.wp-pagenavi > .nextpostslink,
+.wp-pagenavi > .last {
+	background: #ddd;
+	border: 3px solid #333;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	box-sizing: border-box;
+	color: #111;
+	display: inline-block;
+	font-weight: bold;
+	padding: .75em .5em;
+	margin-left: -2px;
+	width: 6.154em;
+	text-align: center;
+	transition: background-color .2s linear;
+}
+
+.wp-pagenavi > .current {
+	background: #111;
+	border-bottom-color: #111;
+	color: #eee;
+}
+
+.wp-pagenavi > .page:active,
+.wp-pagenavi > .page:focus,
+.wp-pagenavi > .page:hover,
+.wp-pagenavi > .previouspostslink:active,
+.wp-pagenavi > .previouspostslink:focus,
+.wp-pagenavi > .previouspostslink:hover,
+.wp-pagenavi > .first:active,
+.wp-pagenavi > .first:focus,
+.wp-pagenavi > .first:hover,
+.wp-pagenavi > .nextpostslink:active,
+.wp-pagenavi > .nextpostslink:focus,
+.wp-pagenavi > .nextpostslink:hover,
+.wp-pagenavi > .last:active,
+.wp-pagenavi > .last:focus,
+.wp-pagenavi > .last:hover {
+	background-color: #fff;
 }
