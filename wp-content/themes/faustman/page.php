@@ -6,11 +6,11 @@
 
 get_header(); ?>
 
-<section id="content">
+<section id="content" class="sections">
 
     <?php if (have_posts()) : ?>
     <?php while (have_posts()) : the_post(); ?>
-    <article <?php post_class('article') ?> id="post-<?php the_ID(); ?>">
+    <article <?php post_class('article'); ?> id="post-<?php the_ID(); ?>">
         <h1 class="article__title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
 
         <div class="article__content entry">

@@ -39,8 +39,7 @@
 <body <?php body_class(); ?>>
 <div id="wrapper">
 
-    <header class="header">
-
+    <header class="header sections">
         <nav class="nav">
             <a href="#content" class="nav__link--skip" id="skip-link" title="Skip to main content">Skip to main content</a>
             <a href="<?php get_bloginfo('url'); ?>" class="nav__link--logo">Jon Faustman</a>

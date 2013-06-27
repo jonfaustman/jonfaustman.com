@@ -5,7 +5,7 @@
  */
 ?>
 
-    <footer class="footer">
+    <footer class="footer sections">
         <h2 class="footer__heading--about">TL;DR about me</h2>
         
         <p class="footer__about">Hi! My name is Jon Faustman. I'm a front-end web developer currently living in Manhattan &ndash; no, not that one. I love turning beautiful mockups into functional websites using semantic web standards. I also really enjoy sarcasm and kittens. Not enough? <a href="<?php echo $url; ?>/about/">Find out more</a>.</p>

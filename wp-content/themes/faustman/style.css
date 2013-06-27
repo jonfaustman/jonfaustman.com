@@ -56,8 +56,10 @@ table {
     border-spacing: 0;
 }
 
+
+/* Generic settings */
 html {
-    font-size: 81.25%;
+    font-size: 81.25%; /* Set for rem purposes. */
 }
 
 body {
@@ -69,6 +71,8 @@ body {
 a {
     color: #6F9BDE;
     text-decoration: none;
+    -moz-transition: color .2s linear;
+    -webkit-transition: color .2s linear;
     transition: color .2s linear;
 }
 
@@ -119,14 +123,14 @@ h4 {
 
 h5 {
     font-size: 14px;
-	font-size: 1.077rem;
+    font-size: 1.077rem;
     margin-bottom: 1.429em;
 }
 
 h6 {
-	font-size: 13px;
+    font-size: 13px;
     font-size: 1rem;
-	margin-bottom: 1.5em;
+    margin-bottom: 1.5em;
 }
 
 abbr {
@@ -149,8 +153,8 @@ ul {
 
 blockquote {
     border-left: 2px solid #666;
-    font-size: 93%;
-    padding-left: 1em;
+    font-size: .923em;
+    padding-left: 1.6667em;
 }
 
 .del,
@@ -171,6 +175,7 @@ table tr {
 table tr th {
     background-color: #eee;
     color: #111;
+    font-weight: bold;
     padding: .25em;
 }
 
@@ -178,81 +183,61 @@ table tr td {
     padding: .25em;
 }
 
+
+/* Main layout **/
 #wrapper {
     margin: 0 auto;
     width: 73.846em; /* 960px */
 }
 
-.header {
-    height: 13.231em; /* 172px */
-    position: relative;
+.sections,
+.wp-pagenavi {
     margin-left: 6.154em; /* 80px */
-    width: 91.6667%; /* 880px */
+    position: relative;
 }
 
-.header > p {
-    background: url(assets/images/avatar.jpg) no-repeat right top;
-    box-sizing: border-box;
-    margin-bottom: 0;
-    min-height: 60px;
-    padding-right: 80px;
-    position: absolute;
-    right: 0;
-    top: 45px;
-    width: 70%;
-}
 
-a.nav__link--skip {
-    color: #111;
-    display: block;
-    left: 0;
-    position: absolute;
-    text-align: right;
-    top: 0;
-    width: 100%;
-}
-
-.nav__link--skip:active,
-.nav__link--skip:focus,
-.nav__link--skip:hover {
-    color: #fff;
-}
-
-.nav__link--logo {
-    background: url(assets/images/jon-faustman-logo.png) no-repeat 0 0;
-    display: block;
-    height: 49px;
-    left: 0;
-    margin-bottom: 24px;
-    position: absolute;
-    text-indent: -999em;
-    top: 60px;
-    width: 298px;
-}
-
-.nav__link--logo:active,
-.nav__link--logo:focus,
-.nav__link--logo:hover {
-    background-position: 0 -58px;
-}
-
-.nav__link {
+/* Prominent layout links */
+.nav__link,
+.article__date,
+.wp-pagenavi > .current,
+.wp-pagenavi > .page,
+.wp-pagenavi > .previouspostslink,
+.wp-pagenavi > .first,
+.wp-pagenavi > .nextpostslink,
+.wp-pagenavi > .last {
     background-color: #ddd;
-    border: 3px solid #222;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border: 3px solid #333;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     color: #111;
     display: inline-block;
     font-weight: bold;
-    left: 0;
-    padding: .75em 0; 
-    position: absolute;
+    padding: .75em 0;
     text-align: center;
-    text-decoration: none;
-    top: 130px;
+    -moz-transition: background-color .2s linear;
+    -webkit-transtion: background-color .2s linear;
     transition: background-color .2s linear;
     width: 6.154em; /* 80px */
+}
+
+.header {
+    height: 13.231em; /* 172px */
+}
+
+.nav__link {
+    -moz-border-radius-topleft: 10px;
+    -webkit-border-top-left-radius: 10px;
+    border-top-left-radius: 10px;
+    -moz-border-radius-topright: 10px;
+    -webkit-border-top-right-radius: 10px;
+    border-top-right-radius: 10px;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    top: 130px;
+    z-index: 1;
 }
 
 .nav__link:link,
@@ -286,33 +271,73 @@ a.nav__link--skip {
 }
 
 .nav__link--active:active,
+.nav__link--active:focus,
 .nav__link--active:hover {
     background-color: #111;
+}
+
+a.nav__link--skip {
+    color: #111;
+    display: block;
+    left: 0;
+    position: absolute;
+    text-align: right;
+    top: 0;
+    width: 100%;
+}
+
+.nav__link--skip:active,
+.nav__link--skip:focus,
+.nav__link--skip:hover {
+    color: #fff;
+}
+
+.nav__link--logo {
+    background: url(assets/images/jon-faustman-logo.png) no-repeat;
+    display: block;
+    height: 49px;
+    left: 0;
+    position: absolute;
+    text-indent: -999em;
+    top: 60px;
+    width: 298px;
+}
+
+.nav__link--logo:active,
+.nav__link--logo:focus,
+.nav__link--logo:hover {
+    background-position: 0 -58px;
 }
 
 #content {
     border: 3px solid #333;
     border-left: none;
-    margin-left: 6.154em; /* 80px */
     padding: 1.5em 6.154em 0 0;
 }
 
 .article {
+    display: block;
     margin-bottom: 6.154em;
     position: relative;
 }
 
+.article:last-child {
+    margin-bottom: 0;
+}
+
 .article__date {
-    background-color: #ddd;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
     border-radius: 10px;
-    color: #111;
     font: 1.5rem/1 Georgia, "Times New Roman", Times, serif;
     left: -80px;
-    padding: .35em .65em; /* 7px 13px */
+    padding: .2em .5em; /* 4px 10px */
     position: absolute;
-    text-align: center;
+    -moz-transition: background-color .2s linear;
+    -webkit-transition: background-color .2s linear;
     transition: background-color .2s linear;
     top: 0;
+    width: auto;
 }
 
 a:active .article__date,
@@ -323,12 +348,14 @@ a:hover .article__date {
 
 .article__date--day {
     display: block;
+    font-size: 26px;
     font-size: 2rem;
     font-style: normal;
     font-weight: bold;
 }
 
 .article__title {
+    font-size: 26px;
     font-size: 2em;
     letter-spacing: -1px;
     line-height: 1.1;
@@ -344,13 +371,13 @@ a .article__content {
 }
 
 .footer {
-    margin-left: 6.154em;
     padding: 1.5em 0;
-    position: relative;
 }
 
 .footer__about {
     background: url(assets/images/avatar.jpg) 100% 0 no-repeat;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     padding-right: 6.154em;
     position: absolute;
@@ -368,7 +395,7 @@ a .article__content {
 
 .footer__social,
 .footer__heading--social {
-	width: 25%;
+    width: 25%;
 }
 
 .footer__copy {
@@ -380,18 +407,18 @@ a .article__content {
 }
 
 .photo-well {
-    margin: 0 20px 20px 0;
+    margin: 0 1.5em 1.5em 0;
 }
 
 .cutline {
-    font-size: 77%;
+    font-size: .770em;
 }
+
 
 /* Code formatting */
 #content pre  {
-     background-color: #333;
+    background-color: #333;
     border: 1px solid #666;
-    font-size: 100%;
     margin-bottom: 1.5em;
     overflow: auto;
     padding: .5em .5em 1.5em;
@@ -404,8 +431,10 @@ a .article__content {
     padding: .75em .5em;
 }
 
+
+/* wp-pagenavi plugin */
 .wp-pagenavi {
-	margin-bottom: -3px;
+    margin-top: -3px;
 }
 
 .wp-pagenavi > .current,
@@ -414,25 +443,19 @@ a .article__content {
 .wp-pagenavi > .first,
 .wp-pagenavi > .nextpostslink,
 .wp-pagenavi > .last {
-	background: #ddd;
-	border: 3px solid #333;
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
-	box-sizing: border-box;
-	color: #111;
-	display: inline-block;
-	font-weight: bold;
-	padding: .75em .5em;
-	margin-left: -2px;
-	width: 6.154em;
-	text-align: center;
-	transition: background-color .2s linear;
+    -moz-border-radius-bottomleft: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    -webkit-border-bottom-right-radius: 10px;
+    -moz-border-radius-bottomright: 10px;
+    border-bottom-right-radius: 10px;
+    margin-left: -3px;
 }
 
 .wp-pagenavi > .current {
-	background: #111;
-	border-bottom-color: #111;
-	color: #eee;
+    background: #111;
+    border-top-color: #111;
+    color: #eee;
 }
 
 .wp-pagenavi > .page:active,
@@ -450,5 +473,5 @@ a .article__content {
 .wp-pagenavi > .last:active,
 .wp-pagenavi > .last:focus,
 .wp-pagenavi > .last:hover {
-	background-color: #fff;
+    background-color: #fff;
 }
