@@ -10,7 +10,7 @@
         <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>">
         <title><?php wp_title('&ndash;', true, 'right'); ?> <?php bloginfo('name'); ?></title>
         <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
-        <link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/assets/images/favicon.ico">
+        <link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/static/img/favicon.ico">
         <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://feeds2.feedburner.com/jonfaustman">
         <link rel="openid.server" href="http://www.myopenid.com/server">
         <link rel="openid.delegate" href="http://faustman.myopenid.com/">
@@ -20,15 +20,15 @@
         <?php
         if (is_page('361')) {
             echo '<meta name="robots" content="noindex, nofollow">'."\n".
-            '<link rel="stylesheet" href="/wp-content/themes/faustman/assets/css/imagemakers.css" type="text/css" media="screen">'."\n".
+            '<link rel="stylesheet" href="/wp-content/themes/faustman/static/css/imagemakers.css" type="text/css" media="screen">'."\n".
             '<!--[if IE]>'."\n".
-            '<link rel="stylesheet" href="/wp-content/themes/faustman/assets/css/imagemakers-ie.css" type="text/css" media="screen">'."\n".
+            '<link rel="stylesheet" href="/wp-content/themes/faustman/static/css/imagemakers-ie.css" type="text/css" media="screen">'."\n".
             '<![endif]-->'."\n";
         }
         if (is_page('422')) {
             echo '<meta name="robots" content="noindex, nofollow">'."\n".
-            '<link rel="stylesheet" href="/wp-content/themes/faustman/assets/css/web-director.css" type="text/css" media="screen">'."\n".
-            '<link rel="stylesheet" href="/wp-content/themes/faustman/assets/css/web-director.print.css" type="text/css" media="print">'."\n";
+            '<link rel="stylesheet" href="/wp-content/themes/faustman/static/css/web-director.css" type="text/css" media="screen">'."\n".
+            '<link rel="stylesheet" href="/wp-content/themes/faustman/static/css/web-director.print.css" type="text/css" media="print">'."\n";
         }
         if (is_page('407')) {
             echo '<style type="text/css">#content{width: 819px} #side{display: none} table tr:nth-child(2n+1){background-color: #161616}</style>'."\n";

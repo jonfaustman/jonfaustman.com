@@ -291,7 +291,7 @@ table tr td {
 
 .nav__link--search {
     left: 248px;
-    padding: .538em .154em; /* 7px 2px */
+    padding: 10px 0; /* 7px 2px */
     transition: width .2s linear;
 }
 
@@ -323,9 +323,18 @@ table tr td {
 .nav__link--search > input {
     background-color: #ddd;
     border: none;
+    box-sizing: content-box;
     font: inherit;
+    margin: 0;
+    padding: 0;
+    text-align: center;
     -webkit-appearance: textfield;
     width: 100%;
+}
+
+.nav__link--search > input::-webkit-search-decoration,
+.nav__link--search > input::-webkit-search-cancel-button {
+    display: none;
 }
 
 .nav__link--search:focus,
@@ -367,7 +376,7 @@ a.nav__link--skip {
 }
 
 .nav__link--logo {
-    background: url(assets/images/jon-faustman-logo.png) no-repeat;
+    background: url(static/img/jon-faustman-logo.png) no-repeat;
     display: block;
     height: 49px;
     left: 1.5em;
@@ -639,7 +648,7 @@ a .article__content {
     }
 
     .footer__about {
-        background: url(assets/images/avatar.jpg) 100% 0 no-repeat;
+        background: url(static/img/avatar.jpg) 100% 0 no-repeat;
         -moz-box-sizing: border-box;
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
