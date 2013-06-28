@@ -14,6 +14,7 @@
         <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://feeds2.feedburner.com/jonfaustman">
         <link rel="openid.server" href="http://www.myopenid.com/server">
         <link rel="openid.delegate" href="http://faustman.myopenid.com/">
+        <link rel="profile" href="http://microformats.org/profile/hcard">
         <meta name="google-site-verification" content="mxS1_rLlu9KA_o9-R1T8fytd76b5IuS5YSQGF2tCFio" />
         <meta name="description" content="Jonathan Faustman is a front-end web developer, web standards enthusiast, espouser of accessibility compliance, and all around good guy.">
         <?php
@@ -22,14 +23,12 @@
             '<link rel="stylesheet" href="/wp-content/themes/faustman/assets/css/imagemakers.css" type="text/css" media="screen">'."\n".
             '<!--[if IE]>'."\n".
             '<link rel="stylesheet" href="/wp-content/themes/faustman/assets/css/imagemakers-ie.css" type="text/css" media="screen">'."\n".
-            '<![endif]-->'."\n".
-            '<link rel="profile" href="http://microformats.org/profile/hcard">'."\n";
+            '<![endif]-->'."\n";
         }
         if (is_page('422')) {
             echo '<meta name="robots" content="noindex, nofollow">'."\n".
             '<link rel="stylesheet" href="/wp-content/themes/faustman/assets/css/web-director.css" type="text/css" media="screen">'."\n".
-            '<link rel="stylesheet" href="/wp-content/themes/faustman/assets/css/web-director.print.css" type="text/css" media="print">'."\n".
-            '<link rel="profile" href="http://microformats.org/profile/hcard">'."\n";
+            '<link rel="stylesheet" href="/wp-content/themes/faustman/assets/css/web-director.print.css" type="text/css" media="print">'."\n";
         }
         if (is_page('407')) {
             echo '<style type="text/css">#content{width: 819px} #side{display: none} table tr:nth-child(2n+1){background-color: #161616}</style>'."\n";
@@ -47,5 +46,6 @@
             <a href="<?php echo $url.'/"'; echo 'class="', ((is_home()) ? 'nav__link nav__link--home nav__link--active"' : 'nav__link nav__link--home"'); ?>>Home</a>
             <a href="<?php echo $url.'/about/"'; echo 'class="', ((is_page(About)) ? 'nav__link nav__link--about nav__link--active"' : 'nav__link nav__link--about"'); ?>>About</a>
             <a href="http://hire.jonfaustman.com/" class="nav__link nav__link--hire">Resume</a>
+            <?php get_search_form(); ?>
         </nav>
     </header>

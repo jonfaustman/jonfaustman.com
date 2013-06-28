@@ -276,11 +276,57 @@ table tr td {
 }
 
 .nav__link--about {
-	left: 97px;
+    left: 97px;
 }
 
 .nav__link--hire {
-	left: 174px;
+    left: 174px;
+}
+
+.nav__link--search {
+    left: 251px;
+    padding: .538em .154em; /* 7px 2px */
+    transition: width .2s linear;
+}
+
+.nav__link--search:focus > input,
+.nav__link--search:hover > input {
+    background-color: inherit;
+}
+
+.nav__link--search > input:-ms-input-placeholder {
+    color: #111;
+    font-weight: bold;
+}
+
+.nav__link--search > input:-moz-input-placeholder {
+    color: #111;
+    font-weight: bold;
+}
+
+.nav__link--search > input::-moz-input-placeholder {
+    color: #111;
+    font-weight: bold;
+}
+
+.nav__link--search > input::-webkit-input-placeholder  {
+    color: #111;
+    font-weight: bold;
+}
+
+.nav__link--search > input {
+    background-color: #ddd;
+    border: none;
+    font: inherit;
+    -webkit-appearance: textfield;
+    width: 100%;
+}
+
+.nav__link--search:focus,
+.nav__link--search:hover,
+.nav__link--search > input:hover,
+.nav__link--search > input:focus {
+    background-color: #fff;
 }
 
 .nav__link--active {
@@ -363,8 +409,6 @@ a.nav__link--skip {
 }
 
 .article__title {
-    font-size: 26px;
-    font-size: 2em;
     letter-spacing: -1px;
     line-height: 1.1;
     text-shadow: 0 1px 0 rgba(255,255,255,.3);
@@ -469,19 +513,28 @@ a .article__content {
     }
 
     .nav__link {
-    	left: 0;
+        left: 0;
     }
 
     .nav__link--about {
-    	left: 77px;
+        left: 77px;
     }
 
     .nav__link--hire {
-    	left: 154px;
+        left: 154px;
+    }
+    
+    .nav__link--search {
+        left: 231px;
+    }
+    
+    .nav__link--search:focus,
+    .nav__link--search:hover {
+        width: 160px;
     }
 
     .nav__link--logo {
-    	left: 0;
+        left: 0;
     }
     
     .article {
@@ -516,6 +569,10 @@ a .article__content {
     a:focus .article__date,
     a:hover .article__date {
         background-color: #fff;
+    }
+    
+    .article__date {
+        text-align: center;
     }
 
     .article__date--day {
