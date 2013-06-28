@@ -14,6 +14,7 @@
         <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://feeds2.feedburner.com/jonfaustman">
         <link rel="openid.server" href="http://www.myopenid.com/server">
         <link rel="openid.delegate" href="http://faustman.myopenid.com/">
+        <meta name="google-site-verification" content="mxS1_rLlu9KA_o9-R1T8fytd76b5IuS5YSQGF2tCFio" />
         <meta name="description" content="Jonathan Faustman is a front-end web developer, web standards enthusiast, espouser of accessibility compliance, and all around good guy.">
         <?php
         if (is_page('361')) {
