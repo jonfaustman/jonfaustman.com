@@ -133,6 +133,10 @@ h6 {
     margin-bottom: 1.5em;
 }
 
+img {
+	max-width: 100%;
+}
+
 abbr {
     border-bottom: 1px dotted #eee;
     cursor: help;
@@ -187,13 +191,11 @@ table tr td {
 /* Main layout **/
 #wrapper {
     margin: 0 auto;
-    width: 73.846em; /* 960px */
 }
 
 .sections,
 .wp-pagenavi {
-    margin-left: 6.154em; /* 80px */
-    position: relative;
+	padding: 0 1.5em;
 }
 
 
@@ -222,6 +224,40 @@ table tr td {
     width: 6.154em; /* 80px */
 }
 
+.nav__link--active,
+.wp-pagenavi > .current {
+    background-color: #111;
+    color: #eee;
+}
+
+.nav__link:link,
+.nav__link:visited {
+    color: #111;
+}
+
+.nav__link:active,
+.nav__link:hover,
+.nav__link:focus,
+.wp-pagenavi > .page:active,
+.wp-pagenavi > .page:focus,
+.wp-pagenavi > .page:hover,
+.wp-pagenavi > .previouspostslink:active,
+.wp-pagenavi > .previouspostslink:focus,
+.wp-pagenavi > .previouspostslink:hover,
+.wp-pagenavi > .first:active,
+.wp-pagenavi > .first:focus,
+.wp-pagenavi > .first:hover,
+.wp-pagenavi > .nextpostslink:active,
+.wp-pagenavi > .nextpostslink:focus,
+.wp-pagenavi > .nextpostslink:hover,
+.wp-pagenavi > .last:active,
+.wp-pagenavi > .last:focus,
+.wp-pagenavi > .last:hover {
+    background-color: #fff;
+}
+
+
+/* Header and navigation. */
 .header {
     height: 13.231em; /* 172px */
 }
@@ -233,36 +269,23 @@ table tr td {
     -moz-border-radius-topright: 10px;
     -webkit-border-top-right-radius: 10px;
     border-top-right-radius: 10px;
-    left: 0;
+    left: 1.5em;
     position: absolute;
     text-align: center;
     top: 130px;
     z-index: 1;
 }
 
-.nav__link:link,
-.nav__link:visited {
-    color: #111;
-}
-
-.nav__link:active,
-.nav__link:hover,
-.nav__link:focus {
-    background-color: #fff;
-}
-
 .nav__link--about {
-    left: 77px;
+	left: 97px;
 }
 
 .nav__link--hire {
-    left: 154px;
+	left: 174px;
 }
 
 .nav__link--active {
-    background-color: #111;
     border-bottom-color: #111;
-    color: #eee;
 }
 
 .nav__link--active:link,
@@ -296,7 +319,7 @@ a.nav__link--skip {
     background: url(assets/images/jon-faustman-logo.png) no-repeat;
     display: block;
     height: 49px;
-    left: 0;
+    left: 1.5em;
     position: absolute;
     text-indent: -999em;
     top: 60px;
@@ -312,7 +335,7 @@ a.nav__link--skip {
 #content {
     border: 3px solid #333;
     border-left: none;
-    padding: 1.5em 6.154em 0 0;
+    padding: 1.5em 1.5em 0;
 }
 
 .article {
@@ -370,9 +393,6 @@ a .article__content {
     color: #eee;
 }
 
-.footer {
-    padding: 1.5em 0;
-}
 
 .footer__about {
     background: url(assets/images/avatar.jpg) 100% 0 no-repeat;
@@ -380,22 +400,6 @@ a .article__content {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     padding-right: 6.154em;
-    position: absolute;
-    right: 0;
-    top: 5.385em; /* 70px */
-    width: 75%;
-}
-
-.footer__heading--about {
-    position: absolute;
-    right: 0;
-    top: 1em; /* 20px */
-    width: 75%;
-}
-
-.footer__social,
-.footer__heading--social {
-    width: 25%;
 }
 
 .footer__copy {
@@ -435,6 +439,7 @@ a .article__content {
 /* wp-pagenavi plugin */
 .wp-pagenavi {
     margin-top: -3px;
+	margin-bottom: 1.5em;
 }
 
 .wp-pagenavi > .current,
@@ -443,35 +448,97 @@ a .article__content {
 .wp-pagenavi > .first,
 .wp-pagenavi > .nextpostslink,
 .wp-pagenavi > .last {
-    -moz-border-radius-bottomleft: 10px;
-    -webkit-border-bottom-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    -webkit-border-bottom-right-radius: 10px;
-    -moz-border-radius-bottomright: 10px;
-    border-bottom-right-radius: 10px;
-    margin-left: -3px;
+	border: 0;
+    display: block;
+	margin: .5em 0;
+    text-align: center;
+    width: auto;
 }
 
 .wp-pagenavi > .current {
-    background: #111;
     border-top-color: #111;
-    color: #eee;
 }
 
-.wp-pagenavi > .page:active,
-.wp-pagenavi > .page:focus,
-.wp-pagenavi > .page:hover,
-.wp-pagenavi > .previouspostslink:active,
-.wp-pagenavi > .previouspostslink:focus,
-.wp-pagenavi > .previouspostslink:hover,
-.wp-pagenavi > .first:active,
-.wp-pagenavi > .first:focus,
-.wp-pagenavi > .first:hover,
-.wp-pagenavi > .nextpostslink:active,
-.wp-pagenavi > .nextpostslink:focus,
-.wp-pagenavi > .nextpostslink:hover,
-.wp-pagenavi > .last:active,
-.wp-pagenavi > .last:focus,
-.wp-pagenavi > .last:hover {
-    background-color: #fff;
+@media only screen and (min-width: 769px) {
+	#wrapper {
+		min-width: 59.154em; /* 769px */
+		max-width: 73.846em; /* 960px */
+	}
+	
+	.sections,
+	.wp-pagenavi {
+		margin-left: 6.154em; /* 80px */
+		padding: 0;
+	    position: relative;
+	}
+	
+	#content {
+		padding: 1.5em 6.154em 0 0;
+	}
+	
+	.nav__link {
+		left: 0;
+	}
+	
+	.nav__link--about {
+		left: 77px;
+	}
+
+	.nav__link--hire {
+		left: 154px;
+	}
+	
+	.nav__link--logo {
+		left: 0;
+	}
+	
+	.wp-pagenavi {
+		margin-bottom: 1.5em;
+		margin-top: -3px;
+	}
+	
+	.wp-pagenavi > .current,
+	.wp-pagenavi > .page,
+	.wp-pagenavi > .previouspostslink,
+	.wp-pagenavi > .first,
+	.wp-pagenavi > .nextpostslink,
+	.wp-pagenavi > .last {
+	    -moz-border-radius-bottomleft: 10px;
+	    -webkit-border-bottom-left-radius: 10px;
+	    border-bottom-left-radius: 10px;
+	    -webkit-border-bottom-right-radius: 10px;
+	    -moz-border-radius-bottomright: 10px;
+	    border-bottom-right-radius: 10px;
+		border: 3px solid #333;
+		display: inline-block;
+	    margin: 0  0 0 -3px;
+		width: 6.154em;
+	}
+	
+	.wp-pagenavi > .current {
+		border-top-color: #111;
+	}
+	
+	.footer {
+		padding: 1.5em 0;
+	}
+	
+	.footer__about {
+	    position: absolute;
+	    right: 0;
+	    top: 5.385em; /* 70px */
+	    width: 75%;
+	}
+	
+	.footer__heading--about {
+	    position: absolute;
+	    right: 0;
+	    top: 1em; /* 20px */
+	    width: 75%;
+	}
+	
+	.footer__social,
+	.footer__heading--social {
+	    width: 25%;
+	}
 }
