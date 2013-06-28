@@ -15,9 +15,9 @@ get_header(); ?>
 ?>
     <a href="<?php the_permalink(); ?>" class="article">
         <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-            <time class="article__date" pubdate datetime="<?php the_time('Y-m-d H:i'); ?>"><?php the_time('M') ?><i class="article__date--day"><?php the_time('j') ?></i></time>
-
             <h1 class="article__title"><?php the_title(); ?></h1>
+            
+            <time class="article__date" pubdate datetime="<?php the_time('Y-m-d H:i'); ?>"><?php the_time('M') ?><i class="article__date--day"><?php the_time('j') ?></i><i class="article__date--year"><?php the_time('Y'); ?></i></time>
 
             <div class="article__content">
                 <?php the_excerpt(); ?>
@@ -26,9 +26,9 @@ get_header(); ?>
     </a>
 <?php else : ?>
     <article <?php post_class('article'); ?> id="post-<?php the_ID(); ?>">
-        <time class="article__date" pubdate datetime="<?php the_time('Y-m-d H:i'); ?>"><?php the_time('M') ?><i class="article__date--day"><?php the_time('j') ?></i></time>
-
         <h1 class="article__title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+        
+        <time class="article__date" pubdate datetime="<?php the_time('Y-m-d H:i'); ?>"><?php the_time('M') ?><i class="article__date--day"><?php the_time('j') ?></i><i class="article__date--year"><?php the_time('Y'); ?></i></time>
 
         <div class="article__content">
             <?php the_content(""); ?>

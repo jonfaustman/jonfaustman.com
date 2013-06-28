@@ -6,7 +6,7 @@
 
 get_header(); ?>
 
-<section class="sections" id="content">
+<section id="content" class="sections">
 
     <?php /** Comment out Google Adsense for now
     /*  <script type="text/javascript"><!--
@@ -26,12 +26,12 @@ get_header(); ?>
     
     <?php while (have_posts()) : the_post(); ?>
     <article <?php post_class('article'); ?> id="post-<?php the_ID(); ?>">
-        <time class="article__date date" pubdate datetime="<?php the_time('Y-m-d H:i'); ?>"><?php the_time('M') ?><i class="article__date--day"><?php the_time('j') ?></i></time>
-
         <h1 class="article__title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
-
-        <div class="article__content entry">
-            <?php the_content('Read the rest of this entry &raquo;'); ?>
+        
+        <time class="article__date" pubdate datetime="<?php the_time('Y-m-d H:i'); ?>"><?php the_time('M') ?><i class="article__date--day"><?php the_time('j') ?></i><i class="article__date--year"><?php the_time('Y') ?></i></time>
+        
+        <div class="article__content">
+            <?php the_content(); ?>
         </div><!-- /article__content -->
     </article>
     <?php endwhile; ?>
