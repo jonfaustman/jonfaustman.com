@@ -268,23 +268,29 @@ table tr td {
     -moz-border-radius-topright: 10px;
     -webkit-border-top-right-radius: 10px;
     border-top-right-radius: 10px;
+    font-size: .923em; /* 12px */
     left: 1.5em;
     position: absolute;
     text-align: center;
     top: 130px;
+    width: 60px;
     z-index: 1;
 }
 
 .nav__link--about {
-    left: 97px;
+    left: 77px;
+}
+
+.nav__link--archive {
+    left: 134px;
 }
 
 .nav__link--hire {
-    left: 174px;
+    left: 191px;
 }
 
 .nav__link--search {
-    left: 251px;
+    left: 248px;
     padding: .538em .154em; /* 7px 2px */
     transition: width .2s linear;
 }
@@ -513,19 +519,25 @@ a .article__content {
     }
 
     .nav__link {
+        font-size: inherit;
         left: 0;
+        width: 6.154em;
     }
 
     .nav__link--about {
         left: 77px;
     }
+    
+    .nav__link--archive {
+        left: 154px;
+    }
 
     .nav__link--hire {
-        left: 154px;
+        left: 231px;
     }
     
     .nav__link--search {
-        left: 231px;
+        left: 308px;
     }
     
     .nav__link--search:focus,

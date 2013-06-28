@@ -45,6 +45,7 @@
             <a href="<?php get_bloginfo('url'); ?>" class="nav__link--logo">Jon Faustman</a>
             <a href="<?php echo $url.'/"'; echo 'class="', ((is_home()) ? 'nav__link nav__link--home nav__link--active"' : 'nav__link nav__link--home"'); ?>>Home</a>
             <a href="<?php echo $url.'/about/"'; echo 'class="', ((is_page(About)) ? 'nav__link nav__link--about nav__link--active"' : 'nav__link nav__link--about"'); ?>>About</a>
+            <a href="<?php echo $url.'/archive/"'; echo 'class="', ((is_page(Archive)) ? 'nav__link nav__link--archive nav__link--active"' : 'nav__link nav__link--archive"'); ?>>Archive</a>
             <a href="http://hire.jonfaustman.com/" class="nav__link nav__link--hire">Resume</a>
             <?php get_search_form(); ?>
         </nav>

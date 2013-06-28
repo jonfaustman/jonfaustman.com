@@ -1,33 +1,26 @@
+<?php
+/**
+ * @package WordPress
+ * @subpackage Faustman
+ * Template Name: Archives
+ */
+
+?>
+
 <?php get_header(); ?>
-<?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
 
-<div class="entry" id="post-<?php the_ID(); ?>">
-<div class="date"><?php the_time('F') ?><strong><?php the_time('j') ?></strong></div>
-<div class="comments"><?php comments_popup_link('None', '1', '%'); ?></div>
-<h2><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
+<section id="content" class="sections">
+    <h2>Archive</h2>
+    
+<?php
+    if (have_posts()) :
+        wp_get_archives( array( 'type' => 'postbypost', 'format' => 'custom', 'before' => '<h2>', 'after' => '</h2>' ) );
+    else :
+?>
+    <h2>Not Found</h2>
 
-<div class="post">
-<?php the_excerpt(); ?>
-
-<div class="postmetadata">
-</div>
-</div>
-</div>
-
-<?php endwhile; ?>
-
-<div class="navigation">
-<?php posts_nav_link(); ?>
-</div>
-
-<?php else : ?>
-
-<div class="post">
-<h2><?php _e('Not Found'); ?></h2>
-</div>
-
+    <p>Sorry, but you are looking for something that isn't here.</p>
 <?php endif; ?>
-</div>
+</section>
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
