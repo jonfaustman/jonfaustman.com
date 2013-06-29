@@ -6,42 +6,46 @@
 
 get_header(); ?>
 
-<div id="content">
-
+<section id="content" class="sections">
 <?php if (have_posts()) : ?>
-<?php while (have_posts()) : the_post(); ?>
-<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
 
-<div class="date"><?php the_time('M') ?><strong><?php the_time('j') ?></strong></div>
+<?php
+    while (have_posts()) : the_post();
+    if (has_excerpt()) :
+?>
+    <a href="<?php the_permalink(); ?>" class="article">
+        <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+            <h1 class="article__title"><?php the_title(); ?></h1>
+            
+            <time class="article__date" pubdate datetime="<?php the_time('Y-m-d H:i'); ?>"><?php the_time('M') ?><i class="article__date--day"><?php the_time('j') ?></i><i class="article__date--year"><?php the_time('Y'); ?></i></time>
 
-<div class="comments"><?php comments_popup_link('None', '1', '%', 'comments-link', 'Off'); ?></div>
+            <div class="article__content">
+                <?php the_excerpt(); ?>
+            </div><!-- /article__content -->
+        </article>
+    </a>
+<?php else : ?>
+    <article <?php post_class('article'); ?> id="post-<?php the_ID(); ?>">
+        <h1 class="article__title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+        
+        <time class="article__date" pubdate datetime="<?php the_time('Y-m-d H:i'); ?>"><?php the_time('M') ?><i class="article__date--day"><?php the_time('j') ?></i><i class="article__date--year"><?php the_time('Y'); ?></i></time>
 
-<h2><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
-
-<div class="entry">
-
-<?php the_content("&hellip;continue " . get_the_title('', '', false)); echo "\n"; ?>
-
-</div>
-
-</div>
-
-<?php endwhile; ?>
-
-<div class="navigation">
-
-<?php posts_nav_link(' &ndash; ', '&laquo; Newer ramblings', 'Older ramblings &raquo;'); echo "\n"; ?>
-
-</div>
+        <div class="article__content">
+            <?php the_content(""); ?>
+        </div><!-- /article__content -->
+    </article>
+<?php
+    endif;
+    endwhile; 
+?>
 
 <?php else : ?>
+    <h2>Not Found</h2>
 
-<h2>Not Found</h2>
-<p>Sorry, but you are looking for something that isn't here.</p>
-
+    <p>Sorry, but you are looking for something that isn't here.</p>
 <?php endif; ?>
+</section>
 
-</div>
+<?php wp_pagenavi(); ?>
 
-<?php //get_sidebar(); ?>
 <?php get_footer(); ?>
