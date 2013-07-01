@@ -134,7 +134,7 @@ h6 {
 }
 
 img {
-	max-width: 100%;
+    max-width: 100%;
 }
 
 abbr {
@@ -290,6 +290,15 @@ table tr td {
 }
 
 .nav__link--search {
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    -moz-border-radius-topleft: 10px;
+    -webkit-border-top-left-radius: 10px;
+    border-top-left-radius: 10px;
+    -moz-border-radius-topright: 10px;
+    -webkit-border-top-right-radius: 10px;
+    border-top-right-radius: 10px;
     color: #111;
     font-family: inherit;
     font-weight: bold;
@@ -300,7 +309,7 @@ table tr td {
     -moz-transition: width .2s linear;
     -webkit-transtion: width .2s linear;
     transition: width .2s linear;
-    -webkit-appearance: textfield;
+    -webkit-appearance: none;
 }
 
 .nav__link--search:-ms-input-placeholder {
@@ -351,6 +360,10 @@ table tr td {
     text-align: right;
     top: 0;
     width: 100%;
+}
+
+.nav__link--skip:visited {
+    color: #111;
 }
 
 .nav__link--skip:active,
@@ -484,9 +497,9 @@ a .article__content {
 .wp-pagenavi > .first,
 .wp-pagenavi > .nextpostslink,
 .wp-pagenavi > .last {
-	border: 0;
+    border: 0;
     display: block;
-	margin: .5em 0;
+    margin: .5em 0;
     width: auto;
 }
 
@@ -496,14 +509,14 @@ a .article__content {
 
 @media only screen and (min-width: 769px) {
     #wrapper {
-    	min-width: 59.154em; /* 769px */
-    	max-width: 73.846em; /* 960px */
+        min-width: 59.154em; /* 769px */
+        max-width: 73.846em; /* 960px */
     }
 
     .sections,
     .wp-pagenavi {
-    	margin-left: 6.154em; /* 80px */
-    	padding: 0;
+        margin-left: 6.154em; /* 80px */
+        padding: 0;
         position: relative;
     }
 
@@ -600,7 +613,7 @@ a .article__content {
     }
 
     .wp-pagenavi {
-    	margin-top: -3px;
+        margin-top: -3px;
     }
 
     .wp-pagenavi > .current,
@@ -615,10 +628,10 @@ a .article__content {
         -webkit-border-bottom-right-radius: 10px;
         -moz-border-radius-bottomright: 10px;
         border-bottom-right-radius: 10px;
-    	border: 3px solid #333;
-    	display: inline-block;
+        border: 3px solid #333;
+        display: inline-block;
         margin: 0  0 0 -3px;
-    	width: 6.154em;
+        width: 6.154em;
     }
 
     .wp-pagenavi > .current {
