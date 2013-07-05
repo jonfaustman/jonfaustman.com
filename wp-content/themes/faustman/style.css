@@ -87,6 +87,10 @@ a:hover {
     text-decoration: none;
 }
 
+em {
+    font-style: italic;
+}
+
 h1,
 h2,
 h3,
@@ -215,7 +219,7 @@ table tr td {
     color: #111;
     display: inline-block;
     font-weight: bold;
-    padding: .75em 0;
+    line-height: 39px;
     text-align: center;
     -moz-transition: background-color .2s linear;
     -webkit-transtion: background-color .2s linear;
@@ -268,7 +272,6 @@ table tr td {
     -webkit-border-top-right-radius: 10px;
     border-top-right-radius: 10px;
     font-size: .923em; /* 12px */
-    height: 45px;
     left: 1.5em;
     position: absolute;
     text-align: center;
@@ -305,6 +308,7 @@ table tr td {
     left: 248px;
     margin: 0;
     outline: 0;
+    padding: 0;
     -moz-transition: width .2s linear;
     -webkit-transtion: width .2s linear;
     transition: width .2s linear;
