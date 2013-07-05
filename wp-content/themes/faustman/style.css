@@ -220,7 +220,6 @@ table tr td {
     -moz-transition: background-color .2s linear;
     -webkit-transtion: background-color .2s linear;
     transition: background-color .2s linear;
-    width: 6.154em; /* 80px */
 }
 
 .nav__link--active,
@@ -269,11 +268,12 @@ table tr td {
     -webkit-border-top-right-radius: 10px;
     border-top-right-radius: 10px;
     font-size: .923em; /* 12px */
+    height: 45px;
     left: 1.5em;
     position: absolute;
     text-align: center;
     top: 130px;
-    width: 5em;/* 60px */
+    width: 5em; /* 60px */
     z-index: 1;
 }
 
@@ -303,7 +303,6 @@ table tr td {
     font-family: inherit;
     font-weight: bold;
     left: 248px;
-    height: 42px;
     margin: 0;
     outline: 0;
     -moz-transition: width .2s linear;
@@ -527,7 +526,7 @@ a .article__content {
     .nav__link {
         font-size: inherit;
         left: 0;
-        width: 6.154em;
+        width: 6.154em; /* 80px */
     }
 
     .nav__link--about {
@@ -543,7 +542,6 @@ a .article__content {
     }
     
     .nav__link--search {
-        height: 45px;
         left: 308px;
     }
     
@@ -576,14 +574,14 @@ a .article__content {
         font-size: 1.5rem;
         left: -80px;
         margin: 0;
-        padding: .2em .425em; /* 4px 8.5px */
+        padding: .2em 0; /* 4px */
         position: absolute;
         -moz-transition: background-color .2s linear;
         -webkit-transition: background-color .2s linear;
         transition: background-color .2s linear;
         text-align: center;
         top: 0;
-        width: auto;
+        width: 3em;
     }
     
     a:active .article__date,
