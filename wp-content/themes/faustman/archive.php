@@ -10,7 +10,7 @@
 <?php get_header(); ?>
 
 <section id="content" class="sections">
-    <h2>Archive</h2>
+    <h2>Articles</h2>
     
 <?php
     if (have_posts()) :
