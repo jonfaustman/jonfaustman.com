@@ -159,7 +159,8 @@ ul {
     margin-left: 1.5em;
 }
 
-blockquote {
+blockquote,
+pre > code {
     border-left: 2px solid #666;
     font-size: .923em;
     padding-left: 1.6667em;
@@ -476,15 +477,6 @@ a .article__content {
 }
 
 
-/* Code formatting */
-#content pre  {
-    background-color: #333;
-    border: 1px solid #666;
-    margin-bottom: 1.5em;
-    overflow: auto;
-    padding: .5em .5em 1.5em;
-}
-
 .repost  {
     background-color: #333;
     border: 1px solid #666;
@@ -512,6 +504,11 @@ a .article__content {
 
 .wp-pagenavi > .current {
     border-top-color: #111;
+}
+
+/* Utility classes */
+.alpha {
+    list-style-type: lower-alpha;
 }
 
 @media only screen and (min-width: 769px) {
@@ -682,7 +679,7 @@ a .article__content {
         padding-right: 0;
     }
     
-    /* Utility classes */
+    /* Non mobile utility classes */
     .float-left {
         float: left;
     }
