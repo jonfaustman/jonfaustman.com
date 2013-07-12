@@ -174,7 +174,7 @@ pre > code {
 
 pre > code {
     display: block;
-    max-width: 320px;
+    max-width: 280px;
     overflow: scroll;
 }
 
