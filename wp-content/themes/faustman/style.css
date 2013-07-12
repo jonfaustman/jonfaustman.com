@@ -141,6 +141,10 @@ img {
     max-width: 100%;
 }
 
+label {
+    cursor: pointer;
+}
+
 abbr {
     border-bottom: 1px dotted #eee;
     cursor: help;
@@ -149,7 +153,9 @@ abbr {
 blockquote,
 p,
 ol,
-ul {
+ul,
+fieldset > legend,
+pre > code {
     margin-bottom: 1.5em;
 }
 
@@ -164,6 +170,12 @@ pre > code {
     border-left: 2px solid #666;
     font-size: .923em;
     padding-left: 1.6667em;
+}
+
+pre > code {
+    display: block;
+    max-width: 320px;
+    overflow: scroll;
 }
 
 .del,
@@ -511,7 +523,20 @@ a .article__content {
     list-style-type: lower-alpha;
 }
 
+[data=answer-correct] {
+    color: #6fde78;
+    font-weight: bold;
+}
+
+.span-4 {
+    width: 25%;
+}
+
 @media only screen and (min-width: 769px) {
+    pre > code {
+        max-width: 769px;
+    }
+    
     #wrapper {
         min-width: 59.154em; /* 769px */
         max-width: 73.846em; /* 960px */
