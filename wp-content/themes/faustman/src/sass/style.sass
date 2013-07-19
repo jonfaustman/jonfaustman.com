@@ -222,7 +222,7 @@ table tr td
     position: absolute
     text-align: center
     top: 130px
-    width: em(60px)
+    width: em(60px, $base: 12px)
     z-index: 1
     +respond-to(desktop)
         font-size: inherit
@@ -231,8 +231,6 @@ table tr td
 
 .nav__link--about
     left: 77px
-    +respond-to(desktop)
-        left: 77px
 
 .nav__link--articles
     left: 134px
