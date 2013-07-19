@@ -1,0 +1,524 @@
+/*
+ * Theme Name: Faustman
+ * Theme URI: http://jonfaustman.com/
+ * Description: My own theme.
+ * Version: 1.4
+ * Author: Jon Faustman
+ * Author URI: http://jonfaustman.com/
+ **/
+
+@import base
+
+
+// Project variables
+// Colors
+$base-color: #111
+$base-color-invert: invert($base-color)
+$base-color-invert-darken-6: darken($base-color-invert, 6.5deg)
+$base-color-invert-lighten-6: lighten($base-color-invert, 6.5deg)
+$base-color-lighten-13: lighten($base-color, 13.3deg)
+$base-color-lighten-33: lighten($base-color, 33.3deg)
+$base-color-link: rgb(110, 155, 220)
+$base-color-link-hue-49: adjust-hue($base-color-link, 49deg)
+$base-color-link-hue-120: adjust-hue($base-color-link, 120deg)
+$base-color-link-hue-neg-71: adjust-hue($base-color-link, -71deg)
+
+// Fonts
+$base-font-size: 13px
+$base-font-family-sans-serif: Arial, sans-serif
+$base-font-family-serif: Georgia, 'Times New Roman', Times, serif
+
+
+// Generic settings
+// Set for rem purposes.
+html
+    font-size: 81.25%
+
+body
+    background-color: $base-color
+    color: $base-color-invert
+    +font($size: $base-font-size, $height: 1.5, $family: $base-font-family-sans-serif, $shorthand: true)
+
+a
+    color: $base-color-link
+    text-decoration: none
+    +transition(color .2s linear)
+
+a:visited
+    color: $base-color-link-hue-49
+
+a:active,
+a:focus,
+a:hover
+    color: $base-color-link-hue-120
+    text-decoration: none
+
+em
+    +font($style: italic)
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+    +font($family: $base-font-family-serif, $weight: bold)
+
+h1
+    +font($size: 26px)
+    margin-bottom: .769em
+
+h2
+    +font($size: 20px)
+    margin-bottom: 1em
+
+h3
+    +font($size: 18px)
+    margin-bottom: 1.111em
+
+h4
+    +font($size: 16px)
+    margin-bottom: 1.25em
+
+h5
+    +font($size: 14px)
+    margin-bottom: 1.429em
+
+h6
+    +font($size: 13px)
+    margin-bottom: 1.5em
+
+img
+    max-width: 100%
+
+label
+    cursor: pointer
+
+abbr
+    border-bottom: 1px dotted $base-color-invert
+    cursor: help
+
+blockquote,
+p,
+ol,
+ul,
+fieldset > legend,
+pre > code
+    margin-bottom: 1.5em
+
+ol,
+ul
+    list-style: disc outside
+    margin-left: 1.5em
+
+blockquote,
+pre > code
+    border-left: 2px solid $base-color-lighten-33
+    +font($size: 12px)
+    padding-left: 1.6667em
+
+pre > code
+    display: block
+    max-width: 280px
+    overflow: scroll
+    +respond-to(desktop)
+        max-width: 769px
+
+.del,
+del
+    text-decoration: line-through
+
+table
+    border-collapse: collapse
+    margin-bottom: 1.5em
+    width: 100%
+
+table tr
+    vertical-align: top
+
+table tr th
+    background-color: $base-color-invert
+    color: $base-color
+    +font($weight: bold)
+    padding: .25em
+
+table tr td
+    padding: .25em
+
+
+// Main layout
+#wrapper
+    margin: 0 auto
+    +respond-to(desktop)
+        min-width: em(769px)
+        max-width: em(960px)
+
+.sections,
+.wp-pagenavi
+    padding: 0 1.5em
+    +respond-to(desktop)
+        margin-left: em(80px)
+        padding: 0
+        position: relative
+
+
+// Prominent layout links
+.nav__link,
+.wp-pagenavi > .current,
+.wp-pagenavi > .page,
+.wp-pagenavi > .previouspostslink,
+.wp-pagenavi > .first,
+.wp-pagenavi > .nextpostslink,
+.wp-pagenavi > .last
+    background-color: $base-color-invert-darken-6
+    border: 3px solid $base-color-lighten-13
+    +box-sizing(border-box)
+    color: $base-color
+    display: inline-block
+    +font($weight: bold)
+    line-height: 39px
+    text-align: center
+    +transition(background-color .2s linear)
+
+.nav__link--active,
+.wp-pagenavi > .current
+    background-color: $base-color
+    color: $base-color-invert
+
+.nav__link:link,
+.nav__link:visited
+    color: $base-color
+
+.nav__link:active,
+.nav__link:hover,
+.nav__link:focus,
+.wp-pagenavi > .page:active,
+.wp-pagenavi > .page:focus,
+.wp-pagenavi > .page:hover,
+.wp-pagenavi > .previouspostslink:active,
+.wp-pagenavi > .previouspostslink:focus,
+.wp-pagenavi > .previouspostslink:hover,
+.wp-pagenavi > .first:active,
+.wp-pagenavi > .first:focus,
+.wp-pagenavi > .first:hover,
+.wp-pagenavi > .nextpostslink:active,
+.wp-pagenavi > .nextpostslink:focus,
+.wp-pagenavi > .nextpostslink:hover,
+.wp-pagenavi > .last:active,
+.wp-pagenavi > .last:focus,
+.wp-pagenavi > .last:hover
+    background-color: $base-color-invert-lighten-6
+
+
+// Header and navigation.
+.header
+    height: em(172px)
+
+.nav__link
+    +border-top-left-radius(10px)
+    +border-top-right-radius(10px)
+    +font($size: 12px)
+    left: 20px
+    position: absolute
+    text-align: center
+    top: 130px
+    width: em(60px)
+    z-index: 1
+    +respond-to(desktop)
+        font-size: inherit
+        left: 0
+        width: em(80px)
+
+.nav__link--about
+    left: 77px
+    +respond-to(desktop)
+        left: 77px
+
+.nav__link--articles
+    left: 134px
+    +respond-to(desktop)
+        left: 154px
+
+.nav__link--hire
+    left: 191px
+    +respond-to(desktop)
+        left: 231px
+
+.nav__link--search
+    +border-radius(0)
+    +border-top-left-radius(10px)
+    +border-top-right-radius(10px)
+    color: $base-color
+    +font($family: inherit, $weight: bold)
+    left: 248px
+    margin: 0
+    outline: 0
+    padding: 0
+    +transition(width .2s linear)
+    -webkit-appearance: none
+    +respond-to(desktop)
+        left: 308px
+
+.nav__link--search:-ms-input-placeholder
+    color: $base-color
+    +font($weight: bold)
+
+.nav__link--search:-moz-placeholder
+    color: $base-color
+    +font($weight: bold)
+
+.nav__link--search::-moz-placeholder
+    color: $base-color
+    +font($weight: bold)
+
+.nav__link--search::-webkit-input-placeholder 
+    color: $base-color
+    +font($weight: bold)
+
+.nav__link--search::-webkit-search-decoration,
+.nav__link--search::-webkit-search-cancel-button
+    display: none
+
+.nav__link--search:focus,
+.nav__link--search:hover
+    +respond-to(desktop)
+        width: 160px
+
+.nav__link--active
+    border-bottom-color: $base-color
+
+.nav__link--active:link,
+.nav__link--active:visited
+    color: $base-color-invert
+
+.nav__link--active:active,
+.nav__link--active:focus,
+.nav__link--active:hover
+    background-color: $base-color
+
+.nav__link--skip
+    color: $base-color
+    display: block
+    left: 0
+    position: absolute
+    text-align: right
+    top: 0
+    width: 100%
+
+.nav__link--skip:visited
+    color: $base-color
+
+.nav__link--skip:active,
+.nav__link--skip:focus,
+.nav__link--skip:hover
+    color: $base-color-invert-lighten-6
+
+.nav__link--logo
+    background: url(static/img/jon-faustman-logo.png) no-repeat
+    display: block
+    height: 49px
+    left: 1.5em
+    position: absolute
+    text-indent: -999em
+    top: 60px
+    width: 298px
+    +respond-to(desktop)
+        left: 0
+
+.nav__link--logo:active,
+.nav__link--logo:focus,
+.nav__link--logo:hover
+    background-position: 0 -58px
+
+#content
+    border: 3px solid $base-color-lighten-13
+    border-left: none
+    padding: 1.5em 1.5em 0
+    +respond-to(desktop)
+        padding: 1.5em 6.154em 0 0
+
+
+// Articles
+.article
+    display: block
+    +respond-to(desktop)
+        margin-bottom: 6.154em
+        position: relative
+
+.article:last-child
+    margin-bottom: 0
+
+.article__date
+    display: block
+    +font($size: 20px)
+    margin-bottom: 1em
+    +respond-to(desktop)
+        background-color: $base-color-invert-darken-6
+        border: 3px solid $base-color-lighten-13
+        +border-radius(10px)
+        color: $base-color
+        display: inline-block
+        +font($size: 20px, $height: 1, $family: $base-font-family-serif, $shorthand: true)
+        left: -80px
+        margin: 0
+        padding: em(4px) 0
+        position: absolute
+        +transition(background-color .2s linear)
+        text-align: center
+        top: 0
+        width: 3em
+
+a:active .article__date,
+a:focus .article__date,
+a:hover .article__date
+    +respond-to(desktop)
+        background-color: $base-color-invert-lighten-6
+
+.article__date--day
+    +respond-to(desktop)
+        display: block
+        +font($size: 26px, $style: normal, $weight: bold)
+
+
+.article__date--day::before
+    content: ' '
+    +respond-to(desktop)
+        content: ''
+
+.article__date--day::after
+    content: ', '
+    +respond-to(desktop)
+        content: ''
+
+.article__date--year
+    +respond-to(desktop)
+        display: none
+
+.article__title
+    letter-spacing: -1px
+    line-height: 1.1
+    +text-shadow(0 1px 0 rgba(255,255,255,.3))
+
+.article__title > a
+    text-decoration: none
+
+a .article__content
+    color: $base-color-invert
+
+
+// Footer
+.footer
+    +respond-to(desktop)
+        padding: 1.5em 0
+    
+.footer__copy,
+.footer__social
+    text-align: center
+
+.footer__social
+    margin-left: 0
+    +respond-to(desktop)
+        margin-left: 1.5em
+        text-align: left
+
+.footer__social > li
+    display: inline
+    padding-right: .5em
+    +respond-to(desktop)
+        display: list-item
+        padding-right: 0
+
+.footer__social > li::last-child
+    padding-right: 0
+
+.footer__about
+    +respond-to(desktop)
+        background: url(static/img/avatar.jpg) 100% 0 no-repeat
+        +box-sizing(border-box)
+        padding-right: 6.154em
+        position: absolute
+        right: 0
+        top: em(70px)
+        width: 75%
+
+.footer__heading--about
+    +respond-to(desktop)
+        position: absolute
+        right: 0
+        top: em(20px)
+        width: 75%
+
+.footer__social,
+.footer__heading--social
+    +respond-to(desktop)
+        width: 25%
+
+.odd
+    background-color: #161616
+
+
+// Photo's
+.well
+    margin-bottom: 1.5em
+
+.cutline
+    +font($size: 10px)
+
+.cutline p:last-child
+    margin-bottom: 0
+
+
+.repost 
+    background-color: $base-color-lighten-13
+    border: 1px solid $base-color-lighten-33
+    color: $base-color-invert-lighten-6
+    padding: .75em .5em
+
+
+// wp-pagenavi plugin
+.wp-pagenavi
+    margin-bottom: 1.5em
+    +respond-to(desktop)
+        margin-top: -3px
+
+.wp-pagenavi > .current,
+.wp-pagenavi > .page,
+.wp-pagenavi > .previouspostslink,
+.wp-pagenavi > .first,
+.wp-pagenavi > .nextpostslink,
+.wp-pagenavi > .last
+    border: 0
+    display: block
+    margin: .5em 0
+    width: auto
+    +respond-to(desktop)
+        +border-bottom-left-radius(10px)
+        +border-bottom-right-radius(10px)
+        border: 3px solid $base-color-lighten-13
+        display: inline-block
+        margin: 0  0 0 -3px
+        width: 6.154em
+
+.wp-pagenavi > .current
+    border-top-color: $base-color
+    +respond-to(desktop)
+        border-top-color: $base-color
+
+// Utility classes
+.alpha
+    list-style-type: lower-alpha
+
+[data=answer-correct]
+    color: $base-color-link-hue-neg-71
+    +font($weight: bold)
+
+.span-4
+    width: 25%
+
+@media only screen and (min-width: 769px)    
+    // Non mobile utility classes
+    .float-left
+        float: left
+
+    .float-right
+        float: right
