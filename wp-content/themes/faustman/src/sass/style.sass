@@ -39,6 +39,9 @@ $base-line-height: 1.5
 %base-color
     color: $base-color
 
+%base-color-invert
+    color: $base-color-invert
+
 %base-vertical-rhythm
     margin-bottom: $base-line-height + em
 
@@ -49,7 +52,7 @@ html
 
 body
     background-color: $base-color
-    color: $base-color-invert
+    @extend %base-color-invert
     +font($size: $base-font-size, $height: $base-line-height, $family: $base-font-family-sans-serif, $shorthand: true)
 
 a
@@ -74,10 +77,15 @@ h4,
 h5,
 h6
     +font($family: $base-font-family-serif, $weight: bold)
+    +text-shadow(0 1px 0 rgba(255,255,255,.3))
 
 h1
     +font($size: 26px)
     margin-bottom: em(20px, $base: 26px)
+    .home &
+        margin-bottom: 0
+        +respond-to(desktop)
+            margin-bottom: em(20px, $base: 26px)
 
 h2
     +font($size: 20px)
@@ -126,12 +134,13 @@ blockquote,
 pre > code
     border-left: 2px solid $base-color-lighten-33
     +font($size: 12px)
-    padding-left: 1.6667em
+    +respond-to(desktop)
+        padding-left: 1.6667em
 
 pre > code
     display: block
     max-width: 280px
-    overflow: scroll
+    overflow: auto
     +respond-to(desktop)
         max-width: 769px
 
@@ -198,7 +207,7 @@ table
 .nav__link--active,
 .wp-pagenavi > .current
     background-color: $base-color
-    color: $base-color-invert
+    @extend %base-color-invert
 
 .nav__link:link,
 .nav__link:visited
@@ -275,7 +284,7 @@ table
     border-bottom-color: $base-color
     &:link,
     &:visited
-        color: $base-color-invert
+        @extend %base-color-invert
     &:active,
     &:focus,
     &:hover
@@ -337,12 +346,13 @@ table
         background-color: $base-color-invert-darken-6
         border: 3px solid $base-color-lighten-13
         +border-radius(10px)
+        +box-sizing(border-box)
         color: $base-color
         display: inline-block
         +font($size: 20px, $height: 1, $family: $base-font-family-serif, $shorthand: true)
         left: -80px
         margin: 0
-        padding: em(4px) 0
+        padding: em(4px, $base: 20px) 0
         position: absolute
         +transition(background-color .2s linear)
         text-align: center
@@ -375,12 +385,11 @@ a:hover .article__date
 .article__title
     letter-spacing: -1px
     line-height: 1.1
-    +text-shadow(0 1px 0 rgba(255,255,255,.3))
     > a
         text-decoration: none
 
 a .article__content
-    color: $base-color-invert
+    @extend %base-color-invert
 
 
 // Footer

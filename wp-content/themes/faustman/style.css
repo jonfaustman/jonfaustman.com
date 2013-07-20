@@ -112,6 +112,11 @@ table tr th, .nav__link,
   color: #111111;
 }
 
+body, .nav__link--active,
+.wp-pagenavi > .current, .nav__link--active:link, .nav__link--active:visited, a .article__content {
+  color: #eeeeee;
+}
+
 h6, blockquote,
 p,
 ol,
@@ -127,7 +132,6 @@ html {
 
 body {
   background-color: #111111;
-  color: #eeeeee;
   font: normal normal normal 13px/1.5 Arial, sans-serif;
   font-size: 1rem;
 }
@@ -160,12 +164,21 @@ h5,
 h6 {
   font-family: Georgia, "Times New Roman", Times, serif;
   font-weight: bold;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 h1 {
   font-size: 26px;
   font-size: 2rem;
   margin-bottom: 0.76923em;
+}
+.home h1 {
+  margin-bottom: 0;
+}
+@media only screen and (min-width: 769px) {
+  .home h1 {
+    margin-bottom: 0.76923em;
+  }
 }
 
 h2 {
@@ -221,13 +234,18 @@ pre > code {
   border-left: 2px solid #666666;
   font-size: 12px;
   font-size: 0.92308rem;
-  padding-left: 1.6667em;
+}
+@media only screen and (min-width: 769px) {
+  blockquote,
+  pre > code {
+    padding-left: 1.6667em;
+  }
 }
 
 pre > code {
   display: block;
   max-width: 280px;
-  overflow: scroll;
+  overflow: auto;
 }
 @media only screen and (min-width: 769px) {
   pre > code {
@@ -324,7 +342,6 @@ table tr td {
 .nav__link--active,
 .wp-pagenavi > .current {
   background-color: #111111;
-  color: #eeeeee;
 }
 
 .header {
@@ -434,9 +451,6 @@ table tr td {
 .nav__link--active {
   border-bottom-color: #111111;
 }
-.nav__link--active:link, .nav__link--active:visited {
-  color: #eeeeee;
-}
 .nav__link--active:active, .nav__link--active:focus, .nav__link--active:hover {
   background-color: #111111;
 }
@@ -510,13 +524,16 @@ table tr td {
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
     border-radius: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
     color: #111111;
     display: inline-block;
     font: normal normal normal 20px/1 Georgia, "Times New Roman", Times, serif;
     font-size: 1.53846rem;
     left: -80px;
     margin: 0;
-    padding: 0.30769em 0;
+    padding: 0.2em 0;
     position: absolute;
     -webkit-transition: background-color 0.2s linear;
     -moz-transition: background-color 0.2s linear;
@@ -570,14 +587,9 @@ table tr td {
 .article__title {
   letter-spacing: -1px;
   line-height: 1.1;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 .article__title > a {
   text-decoration: none;
-}
-
-a .article__content {
-  color: #eeeeee;
 }
 
 @media only screen and (min-width: 769px) {
