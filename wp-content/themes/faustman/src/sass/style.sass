@@ -27,7 +27,20 @@ $base-color-link-hue-neg-71: adjust-hue($base-color-link, -71deg)
 $base-font-size: 13px
 $base-font-family-sans-serif: Arial, sans-serif
 $base-font-family-serif: Georgia, 'Times New Roman', Times, serif
+$base-line-height: 1.5
 
+// Silent classes
+@for $i from 1 through 10
+    %col-#{$i}
+        width: percentage(1/$i)
+    .col-#{$i}
+        @extend %col-#{$i}
+
+%base-color
+    color: $base-color
+
+%base-vertical-rhythm
+    margin-bottom: $base-line-height + em
 
 // Generic settings
 // Set for rem purposes.
@@ -37,21 +50,19 @@ html
 body
     background-color: $base-color
     color: $base-color-invert
-    +font($size: $base-font-size, $height: 1.5, $family: $base-font-family-sans-serif, $shorthand: true)
+    +font($size: $base-font-size, $height: $base-line-height, $family: $base-font-family-sans-serif, $shorthand: true)
 
 a
     color: $base-color-link
     text-decoration: none
     +transition(color .2s linear)
-
-a:visited
-    color: $base-color-link-hue-49
-
-a:active,
-a:focus,
-a:hover
-    color: $base-color-link-hue-120
-    text-decoration: none
+    &:visited
+        color: $base-color-link-hue-49
+    &:active,
+    &:focus,
+    &:hover
+        color: $base-color-link-hue-120
+        text-decoration: none
 
 em
     +font($style: italic)
@@ -66,27 +77,27 @@ h6
 
 h1
     +font($size: 26px)
-    margin-bottom: .769em
+    margin-bottom: em(20px, $base: 26px)
 
 h2
     +font($size: 20px)
-    margin-bottom: 1em
+    margin-bottom: em(20px, $base: 20px)
 
 h3
     +font($size: 18px)
-    margin-bottom: 1.111em
+    margin-bottom: em(20px, $base: 18px)
 
 h4
     +font($size: 16px)
-    margin-bottom: 1.25em
+    margin-bottom: em(20px, $base: 16px)
 
 h5
     +font($size: 14px)
-    margin-bottom: 1.429em
+    margin-bottom: em(20px, $base: 14px)
 
 h6
     +font($size: 13px)
-    margin-bottom: 1.5em
+    @extend %base-vertical-rhythm
 
 img
     max-width: 100%
@@ -104,7 +115,7 @@ ol,
 ul,
 fieldset > legend,
 pre > code
-    margin-bottom: 1.5em
+    @extend %base-vertical-rhythm
 
 ol,
 ul
@@ -130,20 +141,17 @@ del
 
 table
     border-collapse: collapse
-    margin-bottom: 1.5em
-    width: 100%
-
-table tr
-    vertical-align: top
-
-table tr th
-    background-color: $base-color-invert
-    color: $base-color
-    +font($weight: bold)
-    padding: .25em
-
-table tr td
-    padding: .25em
+    @extend %base-vertical-rhythm
+    @extend %col-1
+    tr
+        vertical-align: top
+        th
+            background-color: $base-color-invert
+            @extend %base-color
+            +font($weight: bold)
+            padding: .25em
+        td
+            padding: .25em
 
 
 // Main layout
@@ -163,6 +171,21 @@ table tr td
 
 
 // Prominent layout links
+%prominent-link
+    background-color: $base-color-invert-darken-6
+    border: 3px solid $base-color-lighten-13
+    +box-sizing(border-box)
+    @extend %base-color
+    display: inline-block
+    +font($weight: bold)
+    line-height: 39px
+    text-align: center
+    +transition(background-color .2s linear)
+    &:active,
+    &:focus,
+    &:hover
+        background-color: $base-color-invert-lighten-6
+
 .nav__link,
 .wp-pagenavi > .current,
 .wp-pagenavi > .page,
@@ -170,15 +193,7 @@ table tr td
 .wp-pagenavi > .first,
 .wp-pagenavi > .nextpostslink,
 .wp-pagenavi > .last
-    background-color: $base-color-invert-darken-6
-    border: 3px solid $base-color-lighten-13
-    +box-sizing(border-box)
-    color: $base-color
-    display: inline-block
-    +font($weight: bold)
-    line-height: 39px
-    text-align: center
-    +transition(background-color .2s linear)
+    @extend %prominent-link
 
 .nav__link--active,
 .wp-pagenavi > .current
@@ -187,27 +202,7 @@ table tr td
 
 .nav__link:link,
 .nav__link:visited
-    color: $base-color
-
-.nav__link:active,
-.nav__link:hover,
-.nav__link:focus,
-.wp-pagenavi > .page:active,
-.wp-pagenavi > .page:focus,
-.wp-pagenavi > .page:hover,
-.wp-pagenavi > .previouspostslink:active,
-.wp-pagenavi > .previouspostslink:focus,
-.wp-pagenavi > .previouspostslink:hover,
-.wp-pagenavi > .first:active,
-.wp-pagenavi > .first:focus,
-.wp-pagenavi > .first:hover,
-.wp-pagenavi > .nextpostslink:active,
-.wp-pagenavi > .nextpostslink:focus,
-.wp-pagenavi > .nextpostslink:hover,
-.wp-pagenavi > .last:active,
-.wp-pagenavi > .last:focus,
-.wp-pagenavi > .last:hover
-    background-color: $base-color-invert-lighten-6
+    @extend %base-color
 
 
 // Header and navigation.
@@ -246,7 +241,7 @@ table tr td
     +border-radius(0)
     +border-top-left-radius(10px)
     +border-top-right-radius(10px)
-    color: $base-color
+    @extend %base-color
     +font($family: inherit, $weight: bold)
     left: 248px
     margin: 0
@@ -256,60 +251,50 @@ table tr td
     -webkit-appearance: none
     +respond-to(desktop)
         left: 308px
-
-.nav__link--search:-ms-input-placeholder
-    color: $base-color
-    +font($weight: bold)
-
-.nav__link--search:-moz-placeholder
-    color: $base-color
-    +font($weight: bold)
-
-.nav__link--search::-moz-placeholder
-    color: $base-color
-    +font($weight: bold)
-
-.nav__link--search::-webkit-input-placeholder 
-    color: $base-color
-    +font($weight: bold)
-
-.nav__link--search::-webkit-search-decoration,
-.nav__link--search::-webkit-search-cancel-button
-    display: none
-
-.nav__link--search:focus,
-.nav__link--search:hover
-    +respond-to(desktop)
-        width: 160px
+    &:-ms-input-placeholder
+        color: $base-color
+        +font($weight: bold)
+    &:-moz-placeholder
+        color: $base-color
+        +font($weight: bold)
+    &::-moz-placeholder
+        color: $base-color
+        +font($weight: bold)
+    &::-webkit-input-placeholder 
+        color: $base-color
+        +font($weight: bold)
+    &::-webkit-search-decoration,
+    &::-webkit-search-cancel-button
+        display: none
+    &:focus,
+    &:hover
+        +respond-to(desktop)
+            width: 160px
 
 .nav__link--active
     border-bottom-color: $base-color
-
-.nav__link--active:link,
-.nav__link--active:visited
-    color: $base-color-invert
-
-.nav__link--active:active,
-.nav__link--active:focus,
-.nav__link--active:hover
-    background-color: $base-color
+    &:link,
+    &:visited
+        color: $base-color-invert
+    &:active,
+    &:focus,
+    &:hover
+        background-color: $base-color
 
 .nav__link--skip
-    color: $base-color
+    @extend %base-color
     display: block
     left: 0
     position: absolute
     text-align: right
     top: 0
-    width: 100%
-
-.nav__link--skip:visited
-    color: $base-color
-
-.nav__link--skip:active,
-.nav__link--skip:focus,
-.nav__link--skip:hover
-    color: $base-color-invert-lighten-6
+    @extend %col-1
+    &:visited
+        @extend %base-color
+    &:active,
+    &:focus,
+    &:hover
+        color: $base-color-invert-lighten-6
 
 .nav__link--logo
     background: url(static/img/jon-faustman-logo.png) no-repeat
@@ -322,11 +307,10 @@ table tr td
     width: 298px
     +respond-to(desktop)
         left: 0
-
-.nav__link--logo:active,
-.nav__link--logo:focus,
-.nav__link--logo:hover
-    background-position: 0 -58px
+    &:active,
+    &:focus,
+    &:hover
+        background-position: 0 -58px
 
 #content
     border: 3px solid $base-color-lighten-13
@@ -342,9 +326,8 @@ table tr td
     +respond-to(desktop)
         margin-bottom: 6.154em
         position: relative
-
-.article:last-child
-    margin-bottom: 0
+    &:last-child
+        margin-bottom: 0
 
 .article__date
     display: block
@@ -376,17 +359,14 @@ a:hover .article__date
     +respond-to(desktop)
         display: block
         +font($size: 26px, $style: normal, $weight: bold)
-
-
-.article__date--day::before
-    content: ' '
-    +respond-to(desktop)
-        content: ''
-
-.article__date--day::after
-    content: ', '
-    +respond-to(desktop)
-        content: ''
+    &::before
+        content: ' '
+        +respond-to(desktop)
+            content: ''
+    &::after
+        content: ', '
+        +respond-to(desktop)
+            content: ''
 
 .article__date--year
     +respond-to(desktop)
@@ -396,9 +376,8 @@ a:hover .article__date
     letter-spacing: -1px
     line-height: 1.1
     +text-shadow(0 1px 0 rgba(255,255,255,.3))
-
-.article__title > a
-    text-decoration: none
+    > a
+        text-decoration: none
 
 a .article__content
     color: $base-color-invert
@@ -418,16 +397,14 @@ a .article__content
     +respond-to(desktop)
         margin-left: 1.5em
         text-align: left
-
-.footer__social > li
-    display: inline
-    padding-right: .5em
-    +respond-to(desktop)
-        display: list-item
-        padding-right: 0
-
-.footer__social > li::last-child
-    padding-right: 0
+    > li
+        display: inline
+        padding-right: .5em
+        +respond-to(desktop)
+            display: list-item
+            padding-right: 0
+        &::last-child
+            padding-right: 0
 
 .footer__about
     +respond-to(desktop)
@@ -451,13 +428,9 @@ a .article__content
     +respond-to(desktop)
         width: 25%
 
-.odd
-    background-color: #161616
-
-
 // Photo's
 .well
-    margin-bottom: 1.5em
+    @extend %base-vertical-rhythm
 
 .cutline
     +font($size: 10px)
@@ -475,32 +448,30 @@ a .article__content
 
 // wp-pagenavi plugin
 .wp-pagenavi
-    margin-bottom: 1.5em
+    @extend %base-vertical-rhythm
     +respond-to(desktop)
         margin-top: -3px
-
-.wp-pagenavi > .current,
-.wp-pagenavi > .page,
-.wp-pagenavi > .previouspostslink,
-.wp-pagenavi > .first,
-.wp-pagenavi > .nextpostslink,
-.wp-pagenavi > .last
-    border: 0
-    display: block
-    margin: .5em 0
-    width: auto
-    +respond-to(desktop)
-        +border-bottom-left-radius(10px)
-        +border-bottom-right-radius(10px)
-        border: 3px solid $base-color-lighten-13
-        display: inline-block
-        margin: 0  0 0 -3px
-        width: 6.154em
-
-.wp-pagenavi > .current
-    border-top-color: $base-color
-    +respond-to(desktop)
+    > .current,
+    > .page,
+    > .previouspostslink,
+    > .first,
+    > .nextpostslink,
+    > .last
+        border: 0
+        display: block
+        margin: .5em 0
+        width: auto
+        +respond-to(desktop)
+            +border-bottom-left-radius(10px)
+            +border-bottom-right-radius(10px)
+            border: 3px solid $base-color-lighten-13
+            display: inline-block
+            margin: 0  0 0 -3px
+            width: 6.154em
+    > .current
         border-top-color: $base-color
+        +respond-to(desktop)
+            border-top-color: $base-color
 
 // Utility classes
 .alpha
@@ -510,11 +481,8 @@ a .article__content
     color: $base-color-link-hue-neg-71
     +font($weight: bold)
 
-@for $i from 1 through 10
-    %col-#{$i}
-        width: percentage(1/$i)
-    .col-#{$i}
-        @extend %col-#{$i}
+.odd
+    background-color: #161616
 
 @media only screen and (min-width: 769px)    
     // Non mobile utility classes
