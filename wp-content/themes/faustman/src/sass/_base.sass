@@ -1,0 +1,56 @@
+@import compass/reset
+@import compass/css3
+
+// Function for calculating rem.
+// Ensure both numbers use the same unit.
+@function rem($size, $base: $base-font-size)
+    @return #{$size/$base}rem
+
+
+// Function for calculating em.
+// Ensure both numbers use the same unit.
+@function em($size, $base: $base-font-size)
+    @return #{$size/$base}em
+
+
+// Font mixin
+$font-intial-value: normal !default
+@mixin font($family: false, $size: false, $style: $font-intial-value, $weight: $font-intial-value, $variant: $font-intial-value, $spacing: false, $height: false, $shorthand: false)
+    @if $shorthand == true
+        @if $height
+            font: $style $variant $weight $size/#{$height} $family
+            font-size: rem($size)
+        @else
+            font: $style $variant $weight $size $family
+            font-size: rem($size)
+        @if $spacing
+            letter-spacing: $spacing   
+    @else
+        @if $family
+            font-family: $family
+        @if $size
+            font-size: $size
+            font-size: rem($size)
+        @if $style != $font-intial-value
+            font-style: $style
+        @if $weight != $font-intial-value
+            font-weight: $weight
+        @if $variant != $font-intial-value
+            font-variant: $variant
+        @if $spacing
+            letter-spacing: $spacing
+        @if $height
+            line-height: $height
+
+
+// Mixin for media queries
+@mixin respond-to($device)
+    @if $device == mobile
+        @media only screen and (max-width: 767px)
+            @content
+    @if $device == tablet
+        @media only screen and (min-width: 768px)
+            @content
+    @if $device == desktop
+        @media only screen and (min-width: 769px)
+            @content
