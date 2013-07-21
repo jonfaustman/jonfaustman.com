@@ -212,11 +212,6 @@ table
 .wp-pagenavi > .last
     @extend %prominent-link
 
-.nav__link--active,
-.wp-pagenavi > .current
-    background-color: $base-color
-    @extend %base-color-invert
-
 
 // Header and navigation.
 .header
@@ -288,14 +283,16 @@ table
             width: 160px
 
 .nav__link--active
+    background-color: $base-color
     border-bottom-color: $base-color
+    @extend %base-color-invert
     &:link,
     &:visited
         @extend %base-color-invert
     &:active,
     &:focus,
     &:hover
-        background-color: $base-color
+        color: $base-color
 
 .nav__link--skip
     @extend %base-color
@@ -465,7 +462,13 @@ a .article__content
             margin: 0  0 0 -3px
             width: em(80px)
     > .current
+        background-color: $base-color
         border-top-color: $base-color
+        @extend %base-color-invert
+        &:active,
+        &:focus,
+        &:hover
+            @extend %base-color
         +respond-to(desktop)
             border-top-color: $base-color
 

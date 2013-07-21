@@ -107,12 +107,11 @@ table tr th, .nav__link,
 .wp-pagenavi > .previouspostslink,
 .wp-pagenavi > .first,
 .wp-pagenavi > .nextpostslink,
-.wp-pagenavi > .last, .nav__link:link, .nav__link:visited, .nav__link--search, .nav__link--skip, .nav__link--skip:visited {
+.wp-pagenavi > .last, .nav__link:link, .nav__link:visited, .nav__link--search, .nav__link--skip, .nav__link--skip:visited, .wp-pagenavi > .current:active, .wp-pagenavi > .current:focus, .wp-pagenavi > .current:hover {
   color: #111111;
 }
 
-body, .nav__link--active,
-.wp-pagenavi > .current, .nav__link--active:link, .nav__link--active:visited, a .article__content {
+body, .nav__link--active, .nav__link--active:link, .nav__link--active:visited, a .article__content, .wp-pagenavi > .current {
   color: #eeeeee;
 }
 
@@ -338,11 +337,6 @@ table tr td {
   background-color: white;
 }
 
-.nav__link--active,
-.wp-pagenavi > .current {
-  background-color: #111111;
-}
-
 .header {
   height: 13.23077em;
 }
@@ -448,10 +442,11 @@ table tr td {
 }
 
 .nav__link--active {
+  background-color: #111111;
   border-bottom-color: #111111;
 }
 .nav__link--active:active, .nav__link--active:focus, .nav__link--active:hover {
-  background-color: #111111;
+  color: #111111;
 }
 
 .nav__link--skip {
@@ -685,6 +680,7 @@ table tr td {
   }
 }
 .wp-pagenavi > .current {
+  background-color: #111111;
   border-top-color: #111111;
 }
 @media only screen and (min-width: 59.15385em) {
