@@ -1,6 +1,7 @@
 @import compass/reset
 @import compass/css3
 
+
 // Function for calculating rem.
 // Ensure both numbers use the same unit.
 @function rem($size, $base: $base-font-size)
@@ -45,12 +46,6 @@ $font-intial-value: normal !default
 
 // Mixin for media queries
 @mixin respond-to($device)
-    @if $device == mobile
-        @media only screen and (max-width: 767px)
-            @content
-    @if $device == tablet
-        @media only screen and (min-width: 768px)
-            @content
     @if $device == desktop
-        @media only screen and (min-width: 769px)
+        @media only screen and (min-width: $respond-to-desktop)
             @content
