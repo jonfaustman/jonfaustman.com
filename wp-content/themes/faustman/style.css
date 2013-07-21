@@ -107,8 +107,7 @@ table tr th, .nav__link,
 .wp-pagenavi > .previouspostslink,
 .wp-pagenavi > .first,
 .wp-pagenavi > .nextpostslink,
-.wp-pagenavi > .last, .nav__link:link,
-.nav__link:visited, .nav__link--search, .nav__link--skip, .nav__link--skip:visited {
+.wp-pagenavi > .last, .nav__link:link, .nav__link:visited, .nav__link--search, .nav__link--skip, .nav__link--skip:visited {
   color: #111111;
 }
 
@@ -117,12 +116,18 @@ body, .nav__link--active,
   color: #eeeeee;
 }
 
+blockquote,
+pre > code,
+.repost, .odd, .well {
+  background-color: #333333;
+}
+
 h6, blockquote,
 p,
 ol,
 ul,
 fieldset > legend,
-pre > code, table, .well, .wp-pagenavi {
+pre > code, table, .wp-pagenavi, .well {
   margin-bottom: 1.5em;
 }
 
@@ -175,7 +180,7 @@ h1 {
 .home h1 {
   margin-bottom: 0;
 }
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 59.15385em) {
   .home h1 {
     margin-bottom: 0.76923em;
   }
@@ -226,31 +231,25 @@ abbr {
 ol,
 ul {
   list-style: disc outside;
-  margin-left: 1.5em;
+  margin-left: 1.53846em;
 }
 
 blockquote,
-pre > code {
-  border-left: 2px solid #666666;
+pre > code,
+.repost {
+  border-left: 3px solid #666666;
   font-size: 12px;
   font-size: 0.92308rem;
-}
-@media only screen and (min-width: 769px) {
-  blockquote,
-  pre > code {
-    padding-left: 1.6667em;
-  }
+  padding: 0.83333em 0 0.83333em 1.66667em;
 }
 
 pre > code {
   display: block;
-  max-width: 280px;
-  overflow: auto;
-}
-@media only screen and (min-width: 769px) {
-  pre > code {
-    max-width: 769px;
-  }
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
 }
 
 .del,
@@ -267,16 +266,16 @@ table tr {
 table tr th {
   background-color: #eeeeee;
   font-weight: bold;
-  padding: 0.25em;
+  padding: 0.76923em;
 }
 table tr td {
-  padding: 0.25em;
+  padding: 0.76923em;
 }
 
 #wrapper {
   margin: 0 auto;
 }
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 59.15385em) {
   #wrapper {
     min-width: 59.15385em;
     max-width: 73.84615em;
@@ -285,9 +284,9 @@ table tr td {
 
 .sections,
 .wp-pagenavi {
-  padding: 0 1.5em;
+  padding: 0 1.53846em;
 }
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 59.15385em) {
   .sections,
   .wp-pagenavi {
     margin-left: 6.15385em;
@@ -364,7 +363,7 @@ table tr td {
   width: 5em;
   z-index: 1;
 }
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 59.15385em) {
   .nav__link {
     font-size: inherit;
     left: 0;
@@ -379,7 +378,7 @@ table tr td {
 .nav__link--articles {
   left: 134px;
 }
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 59.15385em) {
   .nav__link--articles {
     left: 154px;
   }
@@ -388,7 +387,7 @@ table tr td {
 .nav__link--hire {
   left: 191px;
 }
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 59.15385em) {
   .nav__link--hire {
     left: 231px;
   }
@@ -418,7 +417,7 @@ table tr td {
   transition: width 0.2s linear;
   -webkit-appearance: none;
 }
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 59.15385em) {
   .nav__link--search {
     left: 308px;
   }
@@ -442,7 +441,7 @@ table tr td {
 .nav__link--search::-webkit-search-decoration, .nav__link--search::-webkit-search-cancel-button {
   display: none;
 }
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 59.15385em) {
   .nav__link--search:focus, .nav__link--search:hover {
     width: 160px;
   }
@@ -470,13 +469,13 @@ table tr td {
   background: url(static/img/jon-faustman-logo.png) no-repeat;
   display: block;
   height: 49px;
-  left: 1.5em;
+  left: 20px;
   position: absolute;
   text-indent: -999em;
   top: 60px;
   width: 298px;
 }
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 59.15385em) {
   .nav__link--logo {
     left: 0;
   }
@@ -488,20 +487,20 @@ table tr td {
 #content {
   border: 3px solid #333333;
   border-left: none;
-  padding: 1.5em 1.5em 0;
+  padding: 1.53846em 1.53846em 0;
 }
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 59.15385em) {
   #content {
-    padding: 1.5em 6.154em 0 0;
+    padding: 1.53846em 6.15385em 0 0;
   }
 }
 
 .article {
   display: block;
 }
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 59.15385em) {
   .article {
-    margin-bottom: 6.154em;
+    margin-bottom: 6.15385em;
     position: relative;
   }
 }
@@ -513,9 +512,9 @@ table tr td {
   display: block;
   font-size: 20px;
   font-size: 1.53846rem;
-  margin-bottom: 1em;
+  margin-bottom: 1.53846em;
 }
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 59.15385em) {
   .article__date {
     background-color: #dddddd;
     border: 3px solid #333333;
@@ -544,16 +543,13 @@ table tr td {
     width: 3em;
   }
 }
-
-@media only screen and (min-width: 769px) {
-  a:active .article__date,
-  a:focus .article__date,
-  a:hover .article__date {
+@media only screen and (min-width: 59.15385em) {
+  a:active .article__date, a:focus .article__date, a:hover .article__date {
     background-color: white;
   }
 }
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 59.15385em) {
   .article__date--day {
     display: block;
     font-size: 26px;
@@ -564,7 +560,7 @@ table tr td {
 .article__date--day::before {
   content: " ";
 }
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 59.15385em) {
   .article__date--day::before {
     content: "";
   }
@@ -572,13 +568,13 @@ table tr td {
 .article__date--day::after {
   content: ", ";
 }
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 59.15385em) {
   .article__date--day::after {
     content: "";
   }
 }
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 59.15385em) {
   .article__date--year {
     display: none;
   }
@@ -588,13 +584,10 @@ table tr td {
   letter-spacing: -1px;
   line-height: 1.1;
 }
-.article__title > a {
-  text-decoration: none;
-}
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 59.15385em) {
   .footer {
-    padding: 1.5em 0;
+    padding: 1.53846em 0;
   }
 }
 
@@ -606,17 +599,17 @@ table tr td {
 .footer__social {
   margin-left: 0;
 }
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 59.15385em) {
   .footer__social {
-    margin-left: 1.5em;
+    margin-left: 1.53846em;
     text-align: left;
   }
 }
 .footer__social > li {
   display: inline;
-  padding-right: 0.5em;
+  padding-right: 0.76923em;
 }
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 59.15385em) {
   .footer__social > li {
     display: list-item;
     padding-right: 0;
@@ -626,13 +619,13 @@ table tr td {
   padding-right: 0;
 }
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 59.15385em) {
   .footer__about {
     background: url(static/img/avatar.jpg) 100% 0 no-repeat;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    padding-right: 6.154em;
+    padding-right: 6.15385em;
     position: absolute;
     right: 0;
     top: 5.38462em;
@@ -640,7 +633,7 @@ table tr td {
   }
 }
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 59.15385em) {
   .footer__heading--about {
     position: absolute;
     right: 0;
@@ -649,30 +642,14 @@ table tr td {
   }
 }
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 59.15385em) {
   .footer__social,
   .footer__heading--social {
     width: 25%;
   }
 }
 
-.cutline {
-  font-size: 10px;
-  font-size: 0.76923rem;
-}
-
-.cutline p:last-child {
-  margin-bottom: 0;
-}
-
-.repost {
-  background-color: #333333;
-  border: 1px solid #666666;
-  color: white;
-  padding: 0.75em 0.5em;
-}
-
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 59.15385em) {
   .wp-pagenavi {
     margin-top: -3px;
   }
@@ -685,10 +662,10 @@ table tr td {
 .wp-pagenavi > .last {
   border: 0;
   display: block;
-  margin: 0.5em 0;
+  margin: 0.76923em 0;
   width: auto;
 }
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 59.15385em) {
   .wp-pagenavi > .current,
   .wp-pagenavi > .page,
   .wp-pagenavi > .previouspostslink,
@@ -704,13 +681,13 @@ table tr td {
     border: 3px solid #333333;
     display: inline-block;
     margin: 0 0 0 -3px;
-    width: 6.154em;
+    width: 6.15385em;
   }
 }
 .wp-pagenavi > .current {
   border-top-color: #111111;
 }
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 59.15385em) {
   .wp-pagenavi > .current {
     border-top-color: #111111;
   }
@@ -725,11 +702,21 @@ table tr td {
   font-weight: bold;
 }
 
-.odd {
-  background-color: #161616;
+.well {
+  border: 3px solid #666666;
+  padding: 0.76923em;
 }
 
-@media only screen and (min-width: 769px) {
+.cutline {
+  font-size: 10px;
+  font-size: 0.76923rem;
+}
+
+.cutline p:last-child {
+  margin-bottom: 0;
+}
+
+@media only screen and (min-width: 59.15385em) {
   .float-left {
     float: left;
   }
