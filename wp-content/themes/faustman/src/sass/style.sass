@@ -156,6 +156,11 @@ blockquote,
 
 pre > code
     display: block
+    white-space: pre-wrap
+    white-space: -moz-pre-wrap
+    white-space: -pre-wrap
+    white-space: -o-pre-wrap
+    word-wrap: break-word
 
 .del,
 del
@@ -489,7 +494,6 @@ pre[class*="language-"]
     font-family: Consolas, Monaco, 'Andale Mono', monospace
     direction: ltr
     text-align: left
-    white-space: pre
     word-spacing: normal
     -moz-tab-size: 4
     -o-tab-size: 4
@@ -505,7 +509,6 @@ pre[class*="language-"]
     border-left: 3px solid $base-color-lighten-33
     +font($size: 12px)
     padding: em(10px, $base: 12px) 0 em(10px, $base: 12px) em(20px, $base: 12px)
-    overflow: auto
 
 ::not(pre) > code[class*="language-"],
 pre[class*="language-"]
