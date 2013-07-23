@@ -39,5 +39,6 @@
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
 </script>
+<script src="//s.diaf.co/jonfaustman.com/js/prism.js"></script>
 </body>
 </html>

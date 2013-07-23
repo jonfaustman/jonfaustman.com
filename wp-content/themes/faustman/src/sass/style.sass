@@ -24,10 +24,17 @@ $base-color-link-hue-120: adjust-hue($base-color-link, 120deg)
 $base-color-link-hue-neg-71: adjust-hue($base-color-link, -71deg)
 
 // Fonts
-$base-font-size: 13px
+$base-font-size: 14px
 $base-font-family-sans-serif: Arial, sans-serif
 $base-font-family-serif: Georgia, 'Times New Roman', Times, serif
 $base-line-height: 1.5
+
+// Headings
+@mixin hN($size)
+    $size: ceil($size)
+    +font($size: $size, $height: 1.1)
+    margin-bottom: em(20px, $base: $size)
+    @extend %hN
 
 // Responsive
 $respond-to-desktop: em(769px)
@@ -54,12 +61,20 @@ $respond-to-desktop: em(769px)
 // Generic settings
 // Set for rem purposes.
 html
-    font-size: 81.25%
+    font-size: percentage($base-font-size/16px)
 
 body
     background-color: $base-color
     @extend %base-color-invert
     +font($size: $base-font-size, $height: $base-line-height, $family: $base-font-family-sans-serif, $shorthand: true)
+
+::-moz-selection
+    text-shadow: none
+    background: $base-color-link-hue-120
+
+::selection
+    text-shadow: none
+    background:  $base-color-link-hue-120
 
 a
     color: $base-color-link
@@ -76,42 +91,38 @@ a
 em
     +font($style: italic)
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6
+%hN
     +font($family: $base-font-family-serif, $weight: bold)
+    text-redering: optimizeLegibility
     +text-shadow(0 1px 0 rgba(255,255,255,.3))
 
-h1
-    +font($size: 26px)
-    margin-bottom: em(20px, $base: 26px)
+h1,
+.h1
+    +hN(28.383px)
     .home &
         margin-bottom: 0
         +respond-to(desktop)
-            margin-bottom: em(20px, $base: 26px)
+            margin-bottom: em(20px, $base: 29px)
 
-h2
-    +font($size: 20px)
-    margin-bottom: em(20px, $base: 20px)
+h2,
+.h2
+    +hN(25.229px)
 
-h3
-    +font($size: 18px)
-    margin-bottom: em(20px, $base: 18px)
+h3,
+.h3
+    +hN(22.426px)
 
-h4
-    +font($size: 16px)
-    margin-bottom: em(20px, $base: 16px)
+h4,
+.h4
+    +hN(19.934px)
 
-h5
-    +font($size: 14px)
-    margin-bottom: em(20px, $base: 14px)
+h5,
+.h5
+    +hN(17.719px)
 
-h6
-    +font($size: 13px)
-    @extend %base-vertical-rhythm
+h6,
+.h6
+    +hN(15.75px)
 
 img
     max-width: 100%
@@ -128,7 +139,7 @@ p,
 ol,
 ul,
 fieldset > legend,
-pre > code
+pre
     @extend %base-vertical-rhythm
 
 ol,
@@ -137,7 +148,6 @@ ul
     margin-left: em(20px)
 
 blockquote,
-pre > code,
 .repost
     @extend %base-color-lighten-13-background
     border-left: 3px solid $base-color-lighten-33
@@ -146,11 +156,6 @@ pre > code,
 
 pre > code
     display: block
-    white-space: pre-wrap
-    white-space: -moz-pre-wrap
-    white-space: -pre-wrap
-    white-space: -o-pre-wrap
-    word-wrap: break-word
 
 .del,
 del
@@ -387,7 +392,6 @@ table
 
 .article__title
     letter-spacing: -1px
-    line-height: 1.1
 
 a .article__content
     @extend %base-color-invert
@@ -395,6 +399,7 @@ a .article__content
 
 // Footer
 .footer
+    padding: em(20px)
     +respond-to(desktop)
         padding: em(20px) 0
     
@@ -427,16 +432,20 @@ a .article__content
         width: 75%
 
 .footer__heading--about
+    @extend h4
     +respond-to(desktop)
         position: absolute
         right: 0
-        top: em(20px)
+        top: auto
         width: 75%
 
 .footer__social,
 .footer__heading--social
     +respond-to(desktop)
         width: 25%
+
+.footer__heading--social
+    @extend h4
 
 
 // wp-pagenavi plugin
@@ -471,6 +480,86 @@ a .article__content
             @extend %base-color
         +respond-to(desktop)
             border-top-color: $base-color
+
+
+// Prism
+code[class*="language-"],
+pre[class*="language-"]
+    color: $base-color-invert
+    font-family: Consolas, Monaco, 'Andale Mono', monospace
+    direction: ltr
+    text-align: left
+    white-space: pre
+    word-spacing: normal
+    -moz-tab-size: 4
+    -o-tab-size: 4
+    tab-size: 4
+    -webkit-hyphens: none
+    -moz-hyphens: none
+    -ms-hyphens: none
+    hyphens: none
+
+// Code blocks
+pre[class*="language-"]
+    @extend %base-color-lighten-13-background
+    border-left: 3px solid $base-color-lighten-33
+    +font($size: 12px)
+    padding: em(10px, $base: 12px) 0 em(10px, $base: 12px) em(20px, $base: 12px)
+    overflow: auto
+
+::not(pre) > code[class*="language-"],
+pre[class*="language-"]
+    background: #f5f2f0
+
+// Inline code
+::not(pre) > code[class*="language-"]
+    padding: .1em
+    border-radius: .3em
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata
+    color: $base-color-lighten-33
+
+.token.punctuation
+    color: $base-color-lighten-33
+
+.namespace
+    opacity: .7
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number
+    color: $base-color-link-hue-120
+
+.token.selector,
+.token.attr-name,
+.token.string
+    color: $base-color-link-hue-neg-71
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string
+    color: $base-color-link-hue-49
+
+.token.atrule,
+.token.attr-value,
+.token.keyword
+    color: $base-color-link
+
+.token.regex,
+.token.important
+    color: $base-color-link-hue-49
+
+.token.important
+    font-weight: bold
+
+.token.entity
+    cursor: help
 
 
 // Utility classes
