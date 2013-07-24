@@ -120,12 +120,10 @@ blockquote,
   background-color: #333333;
 }
 
-blockquote,
 p,
 ol,
 ul,
-fieldset > legend,
-pre, table, .wp-pagenavi, .well {
+fieldset > legend, table, .wp-pagenavi, .well {
   margin-bottom: 1.5em;
 }
 
@@ -141,16 +139,16 @@ body {
 
 ::-moz-selection {
   text-shadow: none;
-  background: #dc6e9b;
+  background: #dc6e9a;
 }
 
 ::selection {
   text-shadow: none;
-  background: #dc6e9b;
+  background: #dc6e9a;
 }
 
 a {
-  color: #6e9bdc;
+  color: #6e9adc;
   text-decoration: none;
   -webkit-transition: color 0.2s linear;
   -moz-transition: color 0.2s linear;
@@ -158,10 +156,10 @@ a {
   transition: color 0.2s linear;
 }
 a:visited {
-  color: #9b6edc;
+  color: #8b6edc;
 }
 a:active, a:focus, a:hover {
-  color: #dc6e9b;
+  color: #dc6e9a;
   text-decoration: none;
 }
 
@@ -170,12 +168,12 @@ em {
 }
 
 h1,
-.h1, h2,
-.h2, h3,
-.h3, h4, .footer__heading--about, .footer__heading--social,
-.h4, h5,
-.h5, h6,
-.h6 {
+.alpha, h2,
+.beta, h3,
+.gamma, h4, .footer__heading--about, .footer__heading--social,
+.delta, h5,
+.epsilon, h6,
+.zeta {
   font-family: Georgia, "Times New Roman", Times, serif;
   font-weight: bold;
   text-redering: optimizeLegibility;
@@ -183,25 +181,25 @@ h1,
 }
 
 h1,
-.h1 {
+.alpha {
   font-size: 29px;
   font-size: 2.07143rem;
   line-height: 1.1;
   margin-bottom: 0.68966em;
 }
 .home h1, .home
-.h1 {
+.alpha {
   margin-bottom: 0;
 }
 @media only screen and (min-width: 54.92857em) {
   .home h1, .home
-  .h1 {
+  .alpha {
     margin-bottom: 0.68966em;
   }
 }
 
 h2,
-.h2 {
+.beta {
   font-size: 26px;
   font-size: 1.85714rem;
   line-height: 1.1;
@@ -209,7 +207,7 @@ h2,
 }
 
 h3,
-.h3 {
+.gamma {
   font-size: 23px;
   font-size: 1.64286rem;
   line-height: 1.1;
@@ -217,7 +215,7 @@ h3,
 }
 
 h4, .footer__heading--about, .footer__heading--social,
-.h4 {
+.delta {
   font-size: 20px;
   font-size: 1.42857rem;
   line-height: 1.1;
@@ -225,7 +223,7 @@ h4, .footer__heading--about, .footer__heading--social,
 }
 
 h5,
-.h5 {
+.epsilon {
   font-size: 18px;
   font-size: 1.28571rem;
   line-height: 1.1;
@@ -233,7 +231,7 @@ h5,
 }
 
 h6,
-.h6 {
+.zeta {
   font-size: 16px;
   font-size: 1.14286rem;
   line-height: 1.1;
@@ -265,6 +263,18 @@ blockquote,
   font-size: 12px;
   font-size: 0.85714rem;
   padding: 0.83333em 0 0.83333em 1.66667em;
+  margin-bottom: 1.66667em;
+}
+
+.tldr {
+  font-size: 18px;
+  font-size: 1.28571rem;
+  line-height: 1.75;
+  margin-bottom: 1.11111em;
+}
+
+pre {
+  margin-bottom: 1.66667em;
 }
 
 pre > code {
@@ -718,7 +728,7 @@ table tr td {
 
 code[class*="language-"],
 pre[class*="language-"] {
-  color: #eeeeee;
+  color: #dc6e9a;
   font-family: Consolas, Monaco, "Andale Mono", monospace;
   direction: ltr;
   text-align: left;
@@ -757,7 +767,7 @@ pre[class*="language-"] {
 }
 
 .token.punctuation {
-  color: #666666;
+  color: #eeeeee;
 }
 
 .namespace {
@@ -768,13 +778,13 @@ pre[class*="language-"] {
 .token.tag,
 .token.boolean,
 .token.number {
-  color: #dc6e9b;
+  color: #6e9adc;
 }
 
 .token.selector,
 .token.attr-name,
 .token.string {
-  color: #6edc9b;
+  color: #6edcd5;
 }
 
 .token.operator,
@@ -782,18 +792,18 @@ pre[class*="language-"] {
 .token.url,
 .language-css .token.string,
 .style .token.string {
-  color: #9b6edc;
+  color: #ffcb73;
 }
 
 .token.atrule,
 .token.attr-value,
 .token.keyword {
-  color: #6e9bdc;
+  color: #6e9adc;
 }
 
 .token.regex,
 .token.important {
-  color: #9b6edc;
+  color: #8b6edc;
 }
 
 .token.important {
@@ -804,12 +814,12 @@ pre[class*="language-"] {
   cursor: help;
 }
 
-.alpha {
+.list--alpha {
   list-style-type: lower-alpha;
 }
 
 [data=answer-correct] {
-  color: #6edc9b;
+  color: #6edcd5;
   font-weight: bold;
 }
 

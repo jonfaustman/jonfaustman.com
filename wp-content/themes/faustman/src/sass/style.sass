@@ -18,10 +18,11 @@ $base-color-invert-darken-6: darken($base-color-invert, 6.5deg)
 $base-color-invert-lighten-6: lighten($base-color-invert, 6.5deg)
 $base-color-lighten-13: lighten($base-color, 13.3deg)
 $base-color-lighten-33: lighten($base-color, 33.3deg)
-$base-color-link: rgb(110, 155, 220)
-$base-color-link-hue-49: adjust-hue($base-color-link, 49deg)
-$base-color-link-hue-120: adjust-hue($base-color-link, 120deg)
-$base-color-link-hue-neg-71: adjust-hue($base-color-link, -71deg)
+$base-color-link-primary: #6E9ADC
+$base-color-link-secondary-a: adjust-hue($base-color-link-primary, 40deg)
+$base-color-link-secondary-b: adjust-hue($base-color-link-primary, -40deg)
+$base-color-link-complementary: #FFCB73
+$base-color-link-interactive: adjust-hue($base-color-link-primary, 120deg)
 
 // Fonts
 $base-font-size: 14px
@@ -70,22 +71,22 @@ body
 
 ::-moz-selection
     text-shadow: none
-    background: $base-color-link-hue-120
+    background: $base-color-link-interactive
 
 ::selection
     text-shadow: none
-    background:  $base-color-link-hue-120
+    background:  $base-color-link-interactive
 
 a
-    color: $base-color-link
+    color: $base-color-link-primary
     text-decoration: none
     +transition(color .2s linear)
     &:visited
-        color: $base-color-link-hue-49
+        color: $base-color-link-secondary-a
     &:active,
     &:focus,
     &:hover
-        color: $base-color-link-hue-120
+        color: $base-color-link-interactive
         text-decoration: none
 
 em
@@ -97,7 +98,7 @@ em
     +text-shadow(0 1px 0 rgba(255,255,255,.3))
 
 h1,
-.h1
+.alpha
     +hN(28.383px)
     .home &
         margin-bottom: 0
@@ -105,23 +106,23 @@ h1,
             margin-bottom: em(20px, $base: 29px)
 
 h2,
-.h2
+.beta
     +hN(25.229px)
 
 h3,
-.h3
+.gamma
     +hN(22.426px)
 
 h4,
-.h4
+.delta
     +hN(19.934px)
 
 h5,
-.h5
+.epsilon
     +hN(17.719px)
 
 h6,
-.h6
+.zeta
     +hN(15.75px)
 
 img
@@ -134,12 +135,10 @@ abbr
     border-bottom: 1px dotted $base-color-invert
     cursor: help
 
-blockquote,
 p,
 ol,
 ul,
-fieldset > legend,
-pre
+fieldset > legend
     @extend %base-vertical-rhythm
 
 ol,
@@ -153,6 +152,14 @@ blockquote,
     border-left: 3px solid $base-color-lighten-33
     +font($size: 12px)
     padding: em(10px, $base: 12px) 0 em(10px, $base: 12px) em(20px, $base: 12px)
+    margin-bottom: em($size: 20px, $base: 12px)
+
+.tldr
+    +font($size: 18px, $height: 1.75)
+    margin-bottom: em($size: 20px, $base: 18px)
+
+pre
+    margin-bottom: em($size: 20px, $base: 12px)
 
 pre > code
     display: block
@@ -490,7 +497,7 @@ a .article__content
 // Prism
 code[class*="language-"],
 pre[class*="language-"]
-    color: $base-color-invert
+    color: $base-color-link-interactive
     font-family: Consolas, Monaco, 'Andale Mono', monospace
     direction: ltr
     text-align: left
@@ -526,7 +533,7 @@ pre[class*="language-"]
     color: $base-color-lighten-33
 
 .token.punctuation
-    color: $base-color-lighten-33
+    color: $base-color-invert
 
 .namespace
     opacity: .7
@@ -535,28 +542,28 @@ pre[class*="language-"]
 .token.tag,
 .token.boolean,
 .token.number
-    color: $base-color-link-hue-120
+    color: $base-color-link-primary
 
 .token.selector,
 .token.attr-name,
 .token.string
-    color: $base-color-link-hue-neg-71
+    color: $base-color-link-secondary-b
 
 .token.operator,
 .token.entity,
 .token.url,
 .language-css .token.string,
 .style .token.string
-    color: $base-color-link-hue-49
+    color: $base-color-link-complementary
 
 .token.atrule,
 .token.attr-value,
 .token.keyword
-    color: $base-color-link
+    color: $base-color-link-primary
 
 .token.regex,
 .token.important
-    color: $base-color-link-hue-49
+    color: $base-color-link-secondary-a
 
 .token.important
     font-weight: bold
@@ -566,11 +573,11 @@ pre[class*="language-"]
 
 
 // Utility classes
-.alpha
+.list--alpha
     list-style-type: lower-alpha
 
 [data=answer-correct]
-    color: $base-color-link-hue-neg-71
+    color: $base-color-link-secondary-b
     +font($weight: bold)
 
 .odd
