@@ -266,7 +266,7 @@ blockquote,
   margin-bottom: 1.66667em;
 }
 
-.tldr {
+.lead {
   font-size: 18px;
   font-size: 1.28571rem;
   line-height: 1.75;
@@ -373,7 +373,12 @@ table tr td {
 }
 
 .header {
-  height: 12.28571em;
+  height: 9.42857em;
+}
+@media only screen and (min-width: 54.92857em) {
+  .header {
+    height: 12.28571em;
+  }
 }
 
 .nav__link {
@@ -388,7 +393,7 @@ table tr td {
   left: 20px;
   position: absolute;
   text-align: center;
-  top: 130px;
+  top: 90px;
   width: 5em;
   z-index: 1;
 }
@@ -396,6 +401,7 @@ table tr td {
   .nav__link {
     font-size: inherit;
     left: 0;
+    top: 130px;
     width: 5.71429em;
   }
 }
@@ -502,16 +508,17 @@ table tr td {
   left: 20px;
   position: absolute;
   text-indent: -999em;
-  top: 60px;
+  top: 20px;
   width: 298px;
+}
+.nav__link--logo:active, .nav__link--logo:focus, .nav__link--logo:hover {
+  background-position: 0 -58px;
 }
 @media only screen and (min-width: 54.92857em) {
   .nav__link--logo {
     left: 0;
+    top: 60px;
   }
-}
-.nav__link--logo:active, .nav__link--logo:focus, .nav__link--logo:hover {
-  background-position: 0 -58px;
 }
 
 #content {

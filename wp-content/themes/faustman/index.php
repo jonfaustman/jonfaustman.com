@@ -19,7 +19,7 @@ get_header(); ?>
             
             <time class="article__date" pubdate datetime="<?php the_time('Y-m-d H:i'); ?>"><?php the_time('M') ?><i class="article__date--day"><?php the_time('j') ?></i><i class="article__date--year"><?php the_time('Y'); ?></i></time>
 
-            <div class="article__content">
+            <div class="article__content lead">
                 <?php the_excerpt(); ?>
             </div><!-- /article__content -->
         </article>

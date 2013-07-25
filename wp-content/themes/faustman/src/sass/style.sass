@@ -154,7 +154,7 @@ blockquote,
     padding: em(10px, $base: 12px) 0 em(10px, $base: 12px) em(20px, $base: 12px)
     margin-bottom: em($size: 20px, $base: 12px)
 
-.tldr
+.lead
     +font($size: 18px, $height: 1.75)
     margin-bottom: em($size: 20px, $base: 18px)
 
@@ -232,7 +232,9 @@ table
 
 // Header and navigation.
 .header
-    height: em(172px)
+    height: em(132px)
+    +respond-to(desktop)
+        height: em(172px)
 
 .nav__link
     +border-top-left-radius(10px)
@@ -241,7 +243,7 @@ table
     left: 20px
     position: absolute
     text-align: center
-    top: 130px
+    top: 90px
     width: em(60px, $base: 12px)
     z-index: 1
     &:link,
@@ -250,6 +252,7 @@ table
     +respond-to(desktop)
         font-size: inherit
         left: 0
+        top: 130px
         width: em(80px)
 
 .nav__link--about
@@ -333,14 +336,15 @@ table
     left: 20px
     position: absolute
     text-indent: -999em
-    top: 60px
+    top: 20px
     width: 298px
-    +respond-to(desktop)
-        left: 0
     &:active,
     &:focus,
     &:hover
         background-position: 0 -58px
+    +respond-to(desktop)
+        left: 0
+        top: 60px
 
 #content
     border: 3px solid $base-color-lighten-13
