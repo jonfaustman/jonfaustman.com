@@ -8,19 +8,17 @@ get_header(); ?>
 
 <section id="content" class="sections">
 
-    <?php /** Comment out Google Adsense for now
-    /*  <script type="text/javascript"><!--
-    /*  google_ad_client = "ca-pub-4502909301189493";
-    /*  /* Default */
-    /*  google_ad_slot = "7581999967";
-    /*  google_ad_width = 728;
-    /*  google_ad_height = 90;
-    /*  //-->
-    /*  </script>
-    /*  <script type="text/javascript"
-    /*  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-    /*  </script>
-    **/ ?>
+    <script type="text/javascript"><!--
+    google_ad_client = "ca-pub-5996049043771362";
+    /* Default */
+    google_ad_slot = "5806617931";
+    google_ad_width = 728;
+    google_ad_height = 90;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+    </script>
 
 <?php if (have_posts()) : ?>
     
@@ -42,19 +40,17 @@ get_header(); ?>
         <p>Sorry, but you are looking for something that isn't here.</p>
 <?php endif; ?>
 
-    <?php /** Comment out Google Adsense for now
-    /*  <script type="text/javascript"><!--
-    /*  google_ad_client = "ca-pub-4502909301189493";
-    /*  /* Default */
-    /*  google_ad_slot = "7581999967";
-    /*  google_ad_width = 728;
-    /*  google_ad_height = 90;
-    /*  //-->
-    /*  </script>
-    /*  <script type="text/javascript"
-    /*  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-    /*  </script>
-    **/ ?>
+    <script type="text/javascript"><!--
+    google_ad_client = "ca-pub-5996049043771362";
+    /* Default */
+    google_ad_slot = "5806617931";
+    google_ad_width = 728;
+    google_ad_height = 90;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+    </script>
 
 </section>
 
