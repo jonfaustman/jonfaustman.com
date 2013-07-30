@@ -156,7 +156,12 @@ blockquote,
 
 .lead
     +font($size: 18px, $height: 1.75)
-    margin-bottom: em($size: 20px, $base: 18px)
+    .single-post &
+        margin-bottom: em($size: 20px, $base: 18px)
+        margin-top: em($size: 20px, $base: 18px)
+    > p
+        .home &
+            margin-bottom: 0
 
 pre
     margin-bottom: em($size: 20px, $base: 12px)
@@ -349,17 +354,20 @@ table
 #content
     border: 3px solid $base-color-lighten-13
     border-left: none
-    padding: em(20px) em(20px) 0
+    padding: em(20px) em(20px) em(20px) 0
     +respond-to(desktop)
-        padding: em(20px) em(80px) 0 0
+        padding: em(20px) em(80px) em(20px) 0
 
 
 // Articles
 .article
     display: block
+    .home &
+        margin-bottom: em(20px)
     +respond-to(desktop)
-        margin-bottom: em(80px)
         position: relative
+        .home &
+            margin-bottom: em(80px)
     &:last-child
         margin-bottom: 0
 

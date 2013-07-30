@@ -270,7 +270,13 @@ blockquote,
   font-size: 18px;
   font-size: 1.28571rem;
   line-height: 1.75;
+}
+.single-post .lead {
   margin-bottom: 1.11111em;
+  margin-top: 1.11111em;
+}
+.home .lead > p {
+  margin-bottom: 0;
 }
 
 pre {
@@ -524,21 +530,26 @@ table tr td {
 #content {
   border: 3px solid #333333;
   border-left: none;
-  padding: 1.42857em 1.42857em 0;
+  padding: 1.42857em 1.42857em 1.42857em 0;
 }
 @media only screen and (min-width: 54.92857em) {
   #content {
-    padding: 1.42857em 5.71429em 0 0;
+    padding: 1.42857em 5.71429em 1.42857em 0;
   }
 }
 
 .article {
   display: block;
 }
+.home .article {
+  margin-bottom: 1.42857em;
+}
 @media only screen and (min-width: 54.92857em) {
   .article {
-    margin-bottom: 5.71429em;
     position: relative;
+  }
+  .home .article {
+    margin-bottom: 5.71429em;
   }
 }
 .article:last-child {
