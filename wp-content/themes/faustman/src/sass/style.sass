@@ -10,19 +10,32 @@
 @import base
 
 
-// Project variables
 // Colors
 $base-color: #111
-$base-color-invert: invert($base-color)
-$base-color-invert-darken-6: darken($base-color-invert, 6.5deg)
-$base-color-invert-lighten-6: lighten($base-color-invert, 6.5deg)
-$base-color-lighten-13: lighten($base-color, 13.3deg)
-$base-color-lighten-33: lighten($base-color, 33.3deg)
+$base-color-inverted: invert($base-color)
+$base-color-monochrome-lighter-grey: darken($base-color-inverted, 6.5deg)
+$base-color-monochrome-white: lighten($base-color-inverted, 6.5deg)
+$base-color-monochrome-dark-grey: lighten($base-color, 13.3deg)
+$base-color-monochrome-light-grey: lighten($base-color, 33.3deg)
 $base-color-link-primary: #6E9ADC
 $base-color-link-secondary-a: adjust-hue($base-color-link-primary, 40deg)
 $base-color-link-secondary-b: adjust-hue($base-color-link-primary, -40deg)
 $base-color-link-complementary: #FFCB73
 $base-color-link-interactive: adjust-hue($base-color-link-primary, 120deg)
+
+
+$colors: base $base-color, inverted $base-color-inverted, monochrome-light-grey $base-color-monochrome-light-grey, monochrome-dark-grey $base-color-monochrome-dark-grey, monochrome-lighter-grey $base-color-monochrome-lighter-grey, monochrome-white $base-color-monochrome-white, primary $base-color-link-primary, secondary-a $base-color-link-secondary-a, secondary-b $base-color-link-secondary-b, complementary $base-color-link-complementary, interactive $base-color-link-interactive
+
+@each $color in $colors
+    %color__#{nth($color, 1)}
+        color: nth($color, 2)
+    .color__#{nth($color, 1)}
+        @extend %color__#{nth($color, 1)}
+    %color__#{nth($color, 1)}--bkgrd
+        background-color: nth($color, 2)
+    .color__#{nth($color, 1)}--bkgrd
+        @extend %color__#{nth($color, 1)}--bkgrd
+
 
 // Fonts
 $base-font-size: 14px
@@ -30,34 +43,38 @@ $base-font-family-sans-serif: Arial, sans-serif
 $base-font-family-serif: Georgia, 'Times New Roman', Times, serif
 $base-line-height: 1.5
 
+
 // Headings
+@each $letter in alpha, beta, gamma, delta, epsilon, zeta
+    .#{$letter}
+        @extend %#{$letter}
+
+%hN
+    +font($family: $base-font-family-serif, $weight: bold)
+    +text-shadow(0 1px 0 rgba(255,255,255,.3))
+    text-redering: optimizeLegibility
+
 @mixin hN($size)
     $size: ceil($size)
     +font($size: $size, $height: 1.1)
     margin-bottom: em(20px, $base: $size)
     @extend %hN
 
+
 // Responsive
 $respond-to-desktop: em(769px)
 
+
 // Silent classes
 @for $i from 1 through 10
-    %col-#{$i}
+    %col--#{$i}
         width: percentage(1/$i)
-    .col-#{$i}
-        @extend %col-#{$i}
-
-%base-color
-    color: $base-color
-
-%base-color-invert
-    color: $base-color-invert
-
-%base-color-lighten-13-background
-    background-color: $base-color-lighten-13
+    .col--#{$i}
+        @extend %col--#{$i}
 
 %base-vertical-rhythm
     margin-bottom: $base-line-height + em
+
 
 // Generic settings
 // Set for rem purposes.
@@ -65,40 +82,35 @@ html
     font-size: percentage($base-font-size/16px)
 
 body
-    background-color: $base-color
-    @extend %base-color-invert
+    @extend %color__base--bkgrd
+    @extend %color__inverted
     +font($size: $base-font-size, $height: $base-line-height, $family: $base-font-family-sans-serif, $shorthand: true)
 
 ::-moz-selection
+    background-color: $base-color-link-interactive
     text-shadow: none
-    background: $base-color-link-interactive
 
 ::selection
+    background-color: $base-color-link-interactive
     text-shadow: none
-    background:  $base-color-link-interactive
 
 a
-    color: $base-color-link-primary
-    text-decoration: none
+    @extend %color__primary
     +transition(color .2s linear)
+    text-decoration: none
     &:visited
-        color: $base-color-link-secondary-a
+        @extend %color__secondary-a
     &:active,
     &:focus,
     &:hover
-        color: $base-color-link-interactive
+        @extend %color__interactive
         text-decoration: none
 
 em
     +font($style: italic)
 
-%hN
-    +font($family: $base-font-family-serif, $weight: bold)
-    text-redering: optimizeLegibility
-    +text-shadow(0 1px 0 rgba(255,255,255,.3))
-
 h1,
-.alpha
+%alpha
     +hN(28.383px)
     .home &
         margin-bottom: 0
@@ -106,23 +118,23 @@ h1,
             margin-bottom: em(20px, $base: 29px)
 
 h2,
-.beta
+%beta
     +hN(25.229px)
 
 h3,
-.gamma
+%gamma
     +hN(22.426px)
 
 h4,
-.delta
+%delta
     +hN(19.934px)
 
 h5,
-.epsilon
+%epsilon
     +hN(17.719px)
 
 h6,
-.zeta
+%zeta
     +hN(15.75px)
 
 img
@@ -132,7 +144,7 @@ label
     cursor: pointer
 
 abbr
-    border-bottom: 1px dotted $base-color-invert
+    border-bottom: 1px dotted $base-color-inverted
     cursor: help
 
 p,
@@ -143,16 +155,14 @@ fieldset > legend
 
 ol,
 ul
-    list-style: disc outside
+    list-style-position: outside
     margin-left: em(20px)
 
-blockquote,
-.repost
-    @extend %base-color-lighten-13-background
-    border-left: 3px solid $base-color-lighten-33
-    +font($size: 12px)
-    padding: em(10px, $base: 12px) 0 em(10px, $base: 12px) em(20px, $base: 12px)
-    margin-bottom: em($size: 20px, $base: 12px)
+ol
+    list-style-type: decimal
+
+ul
+    list-style-type: disc
 
 .lead
     +font($size: 18px, $height: 1.75)
@@ -163,8 +173,24 @@ blockquote,
         .home &
             margin-bottom: 0
 
-pre
+blockquote,
+.repost
+    @extend %color__monochrome-dark-grey--bkgrd
+    border-left: 3px solid $base-color-monochrome-light-grey
+
+blockquote
+    margin-bottom: em($size: 20px, $base: 16px)
+    padding: em(10px, $base: 16px) em(10px, $base: 16px) em(10px, $base: 16px) em(20px, $base: 16px)
+    > p:last-child
+        margin-bottom: 0
+
+.repost
+    +font($size: 12px)
     margin-bottom: em($size: 20px, $base: 12px)
+    padding: em(10px, $base: 12px) em(10px, $base: 12px) em(10px, $base: 12px) em(20px, $base: 12px)
+
+pre
+    margin-bottom: em($size: 20px, $base: 16px)
 
 pre > code
     display: block
@@ -174,19 +200,23 @@ pre > code
     white-space: -o-pre-wrap
     word-wrap: break-word
 
+blockquote,
+pre > code
+    +font($size: 16px)
+
 .del,
 del
     text-decoration: line-through
 
 table
-    border-collapse: collapse
     @extend %base-vertical-rhythm
-    @extend %col-1
+    @extend %col--1
+    border-collapse: collapse
     tr
         vertical-align: top
         th
-            background-color: $base-color-invert
-            @extend %base-color
+            @extend %color__inverted--bkgrd
+            @extend %color__base
             +font($weight: bold)
             padding: em(10px)
         td
@@ -211,19 +241,19 @@ table
 
 // Prominent layout links
 %prominent-link
-    background-color: $base-color-invert-darken-6
-    border: 3px solid $base-color-lighten-13
+    @extend %color__base
+    @extend %color__monochrome-lighter-grey--bkgrd
     +box-sizing(border-box)
-    @extend %base-color
-    display: inline-block
     +font($weight: bold)
+    +transition(background-color .2s linear)
+    border: 3px solid $base-color-monochrome-dark-grey
+    display: inline-block
     line-height: 39px
     text-align: center
-    +transition(background-color .2s linear)
     &:active,
     &:focus,
     &:hover
-        background-color: $base-color-invert-lighten-6
+        @extend %color__monochrome-white--bkgrd
 
 .nav__link,
 .wp-pagenavi > .current,
@@ -253,7 +283,7 @@ table
     z-index: 1
     &:link,
     &:visited
-        @extend %base-color
+        @extend %color__base
     +respond-to(desktop)
         font-size: inherit
         left: 0
@@ -274,16 +304,16 @@ table
         left: 231px
 
 .nav__link--search
+    @extend %color__base
     +border-radius(0)
     +border-top-left-radius(10px)
     +border-top-right-radius(10px)
-    @extend %base-color
     +font($family: inherit, $weight: bold)
+    +transition(width .2s linear)
     left: 248px
     margin: 0
     outline: 0
     padding: 0
-    +transition(width .2s linear)
     -webkit-appearance: none
     +respond-to(desktop)
         left: 308px
@@ -310,29 +340,29 @@ table
 .nav__link--active
     background-color: $base-color
     border-bottom-color: $base-color
-    @extend %base-color-invert
+    color: $base-color-inverted
     &:link,
     &:visited
-        @extend %base-color-invert
+        color: $base-color-inverted
     &:active,
     &:focus,
     &:hover
         color: $base-color
 
 .nav__link--skip
-    @extend %base-color
+    @extend %color__base
+    @extend %col--1
     display: block
     left: 0
     position: absolute
     text-align: right
     top: 0
-    @extend %col-1
     &:visited
-        @extend %base-color
+        @extend %color__base
     &:active,
     &:focus,
     &:hover
-        color: $base-color-invert-lighten-6
+        @extend %color__monochrome-white
 
 .nav__link--logo
     background: url(static/img/jon-faustman-logo.png) no-repeat
@@ -352,7 +382,7 @@ table
         top: 60px
 
 #content
-    border: 3px solid $base-color-lighten-13
+    border: 3px solid $base-color-monochrome-dark-grey
     border-left: none
     padding: em(20px) em(20px) em(20px) 0
     +respond-to(desktop)
@@ -372,22 +402,22 @@ table
         margin-bottom: 0
 
 .article__date
-    display: block
     +font($size: 20px)
+    display: block
     margin-bottom: em(20px)
     +respond-to(desktop)
-        background-color: $base-color-invert-darken-6
-        border: 3px solid $base-color-lighten-13
         +border-radius(10px)
         +box-sizing(border-box)
+        +font($size: 20px, $height: 1, $family: $base-font-family-serif, $shorthand: true)
+        +transition(background-color .2s linear)
+        background-color: $base-color-monochrome-lighter-grey
+        border: 3px solid $base-color-monochrome-dark-grey
         color: $base-color
         display: inline-block
-        +font($size: 20px, $height: 1, $family: $base-font-family-serif, $shorthand: true)
         left: -80px
         margin: 0
         padding: em(4px, $base: 20px) 0
         position: absolute
-        +transition(background-color .2s linear)
         text-align: center
         top: 0
         width: em(60px, $base: 20px)
@@ -395,12 +425,12 @@ table
     a:focus &,
     a:hover &
         +respond-to(desktop)
-            background-color: $base-color-invert-lighten-6
+            background-color: $base-color-monochrome-white
 
 .article__date--day
     +respond-to(desktop)
-        display: block
         +font($size: 26px, $style: normal, $weight: bold)
+        display: block
     &::before
         content: ' '
         +respond-to(desktop)
@@ -418,7 +448,7 @@ table
     letter-spacing: -1px
 
 a .article__content
-    @extend %base-color-invert
+    @extend %color__inverted
 
 
 // Footer
@@ -430,6 +460,14 @@ a .article__content
 .footer__copy,
 .footer__social
     text-align: center
+
+.footer__copy
+    > li
+        border-right: 1px solid $base-color-inverted
+        padding: 0 em(10px)
+        &:last-child
+            border-right: none
+            padding-right: 0
 
 .footer__social
     margin-left: 0
@@ -447,8 +485,8 @@ a .article__content
 
 .footer__about
     +respond-to(desktop)
-        background: url(static/img/avatar.jpg) 100% 0 no-repeat
         +box-sizing(border-box)
+        background: url(static/img/avatar.jpg) 100% 0 no-repeat
         padding-right: em(80px)
         position: absolute
         right: 0
@@ -490,18 +528,18 @@ a .article__content
         +respond-to(desktop)
             +border-bottom-left-radius(10px)
             +border-bottom-right-radius(10px)
-            border: 3px solid $base-color-lighten-13
+            border: 3px solid $base-color-monochrome-dark-grey
             display: inline-block
             margin: 0  0 0 -3px
             width: em(80px)
     > .current
         background-color: $base-color
         border-top-color: $base-color
-        @extend %base-color-invert
+        color: $base-color-inverted
         &:active,
         &:focus,
         &:hover
-            @extend %base-color
+            @extend %color__base
         +respond-to(desktop)
             border-top-color: $base-color
 
@@ -509,25 +547,24 @@ a .article__content
 // Prism
 code[class*="language-"],
 pre[class*="language-"]
-    color: $base-color-link-interactive
-    font-family: Consolas, Monaco, 'Andale Mono', monospace
+    @extend %color__interactive
     direction: ltr
-    text-align: left
-    word-spacing: normal
-    -moz-tab-size: 4
-    -o-tab-size: 4
-    tab-size: 4
+    font-family: Consolas, Monaco, 'Andale Mono', monospace
     -webkit-hyphens: none
     -moz-hyphens: none
     -ms-hyphens: none
     hyphens: none
+    -moz-tab-size: 4
+    -o-tab-size: 4
+    tab-size: 4
+    text-align: left
+    word-spacing: normal
 
 // Code blocks
 pre[class*="language-"]
-    @extend %base-color-lighten-13-background
-    border-left: 3px solid $base-color-lighten-33
-    +font($size: 12px)
-    padding: em(10px, $base: 12px) 0 em(10px, $base: 12px) em(20px, $base: 12px)
+    @extend %color__monochrome-dark-grey--bkgrd
+    border-left: 3px solid $base-color-monochrome-light-grey
+    padding: em(10px, $base: 16px) 0 em(10px, $base: 16px) em(20px, $base: 16px)
 
 ::not(pre) > code[class*="language-"],
 pre[class*="language-"]
@@ -542,64 +579,94 @@ pre[class*="language-"]
 .token.prolog,
 .token.doctype,
 .token.cdata
-    color: $base-color-lighten-33
+    @extend %color__monochrome-light-grey
 
 .token.punctuation
-    color: $base-color-invert
+    @extend %color__inverted
 
 .namespace
-    opacity: .7
+    +opacity(.7)
 
 .token.property,
 .token.tag,
 .token.boolean,
 .token.number
-    color: $base-color-link-primary
+    @extend %color__primary
 
 .token.selector,
 .token.attr-name,
 .token.string
-    color: $base-color-link-secondary-b
+    @extend %color__secondary-b
 
 .token.operator,
 .token.entity,
 .token.url,
 .language-css .token.string,
 .style .token.string
-    color: $base-color-link-complementary
+    @extend %color__complementary
 
 .token.atrule,
 .token.attr-value,
 .token.keyword
-    color: $base-color-link-primary
+    @extend %color__primary
 
 .token.regex,
 .token.important
-    color: $base-color-link-secondary-a
+    @extend %color__secondary-a
 
 .token.important
-    font-weight: bold
+    +font($weight: bold)
 
 .token.entity
     cursor: help
 
 
 // Utility classes
+.example--color-block
+    +box-sizing(border-box)
+    +font($weight: bold)
+    +text-shadow(0 1px 1px rgba(0,0,0,.75))
+    border-right: 2px solid $base-color-monochrome-dark-grey
+    min-height: em(80px)
+    padding-top: em(20px)
+    text-align: center
+    &:last-child
+        border-right: none
+    
 .list--alpha
     list-style-type: lower-alpha
 
+.list--inline
+    list-style: none
+    margin-left: 0
+    li
+        display: inline
+
+.list--inline-block
+    font-size: 0
+    list-style: none
+    margin-bottom: 20px
+    li
+        +font($size: $base-font-size)
+        display: inline-block
+        vertical-align: top
+
+.list--unstyled
+    list-style-type: none
+    margin-left: 0
+
 [data=answer-correct]
-    color: $base-color-link-secondary-b
+    @extend %color__secondary-b
     +font($weight: bold)
 
 .odd
-    @extend %base-color-lighten-13-background
+    @extend %color__monochrome-light-grey
 
 // Photo's
 .well
-    @extend %base-color-lighten-13-background
-    border: 3px solid $base-color-lighten-33
+    @extend %color__monochrome-light-grey
     @extend %base-vertical-rhythm
+    border: 3px solid $base-color-monochrome-light-grey
     padding: em(10px)
 
 .cutline
@@ -610,8 +677,12 @@ pre[class*="language-"]
 
 // Desktop utility classes
 +respond-to(desktop)
-    .float-left
+    %float-left
         float: left
+    .float-left
+        @extend %float-left
 
-    .float-right
+    %float-right
         float: right
+    .float-right
+        @extend %float-right

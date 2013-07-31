@@ -21,7 +21,10 @@
             <li><a href="http://twitter.com/faustman/">Twitter</a></li>
         </ul>
         
-        <p class="footer__copy">Copyright &copy; Jon Faustman.</p>
+        <ul class="footer__copy list--inline list--unstyled">
+            <li><a href="/style-guide/">Style guide</a></li>
+            <li>Copyright &copy; Jon Faustman</li>
+        </ul>
     </footer>
 </div><!-- /wrapper -->
 
