@@ -188,6 +188,8 @@ blockquote
     +font($size: 12px)
     margin-bottom: em($size: 20px, $base: 12px)
     padding: em(10px, $base: 12px) em(10px, $base: 12px) em(10px, $base: 12px) em(20px, $base: 12px)
+    > p:last-child
+        margin-bottom: 0
 
 pre
     margin-bottom: em($size: 20px, $base: 16px)
@@ -384,7 +386,7 @@ table
 #content
     border: 3px solid $base-color-monochrome-dark-grey
     border-left: none
-    padding: em(20px) em(20px) em(20px) 0
+    padding: em(20px)
     +respond-to(desktop)
         padding: em(20px) em(80px) em(20px) 0
 

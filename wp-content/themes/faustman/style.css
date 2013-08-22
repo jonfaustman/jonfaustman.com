@@ -407,6 +407,9 @@ blockquote > p:last-child {
   margin-bottom: 1.66667em;
   padding: 0.83333em 0.83333em 0.83333em 1.66667em;
 }
+.repost > p:last-child {
+  margin-bottom: 0;
+}
 
 pre {
   margin-bottom: 1.25em;
@@ -643,7 +646,7 @@ table tr td {
 #content {
   border: 3px solid #333333;
   border-left: none;
-  padding: 1.42857em 1.42857em 1.42857em 0;
+  padding: 1.42857em;
 }
 @media only screen and (min-width: 54.92857em) {
   #content {
