@@ -28,9 +28,4 @@ get_header(); ?>
     <?php endif; ?>
 </section>
 
-<?php
-    if (is_page('361') OR is_page('422')) {
-        include_once('wp-content/themes/faustman/sidebar-ref.php');
-    }
-?>
 <?php get_footer(); ?>
